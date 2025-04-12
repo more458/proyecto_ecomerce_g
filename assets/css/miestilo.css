@@ -1,0 +1,35 @@
+p{
+    font-family: Verdana; /*tipo de letras*/
+    text-align: justify; /*alineacion de texto*/
+    color: red; /*color de la fuente*/
+    font-size: 24px;/*tamaño de la fuente*/
+    font-style: italic;/*estilo*/
+    font-weight: bold;/*negrito o fuerte*/
+
+}
+
+body{
+    background-color: lightblue;/*colo del fondo del body*/
+    margin: 0;
+}
+
+/*colo y alineacion de la etiqueta h1*/
+h1{
+    color: white; 
+    font-weight: bold;
+    text-align: center;
+}
+
+a {
+    font-family: sans-serif;
+    
+}
+
+.navbar{
+    background-color: aliceblue;
+    padding: 10px;
+}
+
+header{
+    margin: 0;
+}
