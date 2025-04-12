@@ -6,8 +6,12 @@ use CodeIgniter\Controller;
 
 class Home extends BaseController
 {
-    public function index(): string
+    public function index()
     {
-        return view('principal.html');
+        $tituloVar['titulo'] = 'principal';
+        echo view('front/header_view', $tituloVar);
+        echo view('front/nav_view');
+        echo view('front/plantilla');
+        echo view('front/footer_view');
     }
 }
