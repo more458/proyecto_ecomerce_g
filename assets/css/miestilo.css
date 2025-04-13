@@ -1,35 +1,43 @@
-p{
-    font-family: Verdana; /*tipo de letras*/
-    text-align: justify; /*alineacion de texto*/
-    color: red; /*color de la fuente*/
-    font-size: 24px;/*tamaño de la fuente*/
-    font-style: italic;/*estilo*/
-    font-weight: bold;/*negrito o fuerte*/
+/* estilos.css */
 
-}
-
-body{
-    background-color: lightblue;/*colo del fondo del body*/
-    margin: 0;
-}
-
-/*colo y alineacion de la etiqueta h1*/
-h1{
-    color: white; 
-    font-weight: bold;
+/* Estilo general para el body */
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+    padding: 20px;
     text-align: center;
 }
 
-a {
-    font-family: sans-serif;
-    
+/* Título centrado y estilizado */
+h1 {
+    color: #343a40;
+    margin-bottom: 30px;
 }
 
-.navbar{
-    background-color: aliceblue;
+/* Personalización del carrusel */
+#carouselExampleRide {
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Imágenes del carrusel */
+.carousel-item img {
+    object-fit: cover;
+    height: 500px;
+}
+
+/* Botones de navegación */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
     padding: 10px;
 }
 
-header{
-    margin: 0;
+/* Mejora para accesibilidad */
+.visually-hidden {
+    display: none;
 }
