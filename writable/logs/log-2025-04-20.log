@@ -1,0 +1,15 @@
+CRITICAL - 2025-04-20 20:44:47 --> ErrorException: include(navbar_view.php): Failed to open stream: No such file or directory
+[Method: GET, Route: /]
+in APPPATH\Views\front\plantilla.php on line 18.
+ 1 APPPATH\Views\front\plantilla.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'include(navbar_view.php): Failed to open stream: No such file or directory', 'C:\\xampp\\htdocs\\proyecto_ecomerce_TomasMoreno_JulietaGauna\\app\\Views\\front\\plantilla.php', 18)
+ 2 APPPATH\Views\front\plantilla.php(18): include()
+ 3 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\proyecto_ecomerce_TomasMoreno_JulietaGauna\\app\\Views\\front\\plantilla.php')
+ 4 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('front/plantilla', [], true)
+ 6 APPPATH\Controllers\Home.php(14): view('front/plantilla')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
