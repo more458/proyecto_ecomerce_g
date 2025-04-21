@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +21,7 @@
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="app/Views/front/quienesSomos.php">Quienes Somos</a>
+          <a class="nav-link" href='quienesSomos'>Quienes Somos</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Comercializacion</a>
