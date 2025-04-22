@@ -16,11 +16,37 @@ class Home extends BaseController
     }
 
     public function quienes_somos()
- {
-       $tituloVar['titulo']='quienes somos';
-       echo view ('front/header_view',$tituloVar);
-    	//echo view ('front/nav_view');
-    	echo view ('front/quienesSomos');
-    	echo view ('front/footer_view');
- }
+    {
+        $tituloVar['titulo']='quienes somos';
+        echo view ('front/header_view',$tituloVar);
+        //echo view ('front/nav_view');
+        echo view ('front/quienesSomos');
+        echo view ('front/footer_view');
+    }
+
+    public function Comercializacion()
+    {
+        $tituloVar['titulo']='Comercializacion';
+        echo view ('front/header_view',$tituloVar);
+        //echo view ('front/nav_view');
+        echo view ('front/Comercializacion');
+        echo view ('front/footer_view');
+    }
+
+    public function terminosUso(){
+        $tituloVar['titulo']='Comercializacion';
+        echo view ('front/header_view',$tituloVar);
+        //echo view ('front/nav_view');
+        echo view ('front/Terminos_Uso');
+        echo view ('front/footer_view');  
+    }
+
+    public function Contact()
+    {
+        $tituloVar['titulo']='Comercializacion';
+        echo view ('front/header_view',$tituloVar);
+        //echo view ('front/nav_view');
+        echo view ('front/Info_Contact');
+        echo view ('front/footer_view');  
+    }
 }

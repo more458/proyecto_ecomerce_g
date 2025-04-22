@@ -18,22 +18,22 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href=''>Home</a>
+          <a class="nav-link active" aria-current="page" href='Casa'>Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href='quienesSomos'>Quienes Somos</a>
 
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Comercializacion</a>
+          <a class="nav-link" href='Comercializacion'>Comercializacion</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Mas
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Informacion de contacto</a></li>
-            <li><a class="dropdown-item" href="#">Terminos de Uso</a></li>
+            <li><a class="dropdown-item" href='Info_contact'>Informacion de contacto</a></li>
+            <li><a class="dropdown-item" href='Terminos_Uso'>Terminos de Uso</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
