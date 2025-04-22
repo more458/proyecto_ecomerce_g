@@ -36,15 +36,19 @@
 
 <!-- cartas de identidad -->
 <div class="us">
+    <h2>Personal del Staff</h2>
+</div>
+<div class="us">
     <div class="card" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
+      <img src="assets/img/maximo_meridio.webp" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <h5 class="card-title">Máximo Décimo Meridio</h5>
+        <p class="card-text">Mi nombre es Máximo Décimo Meridio, comandante de los ejércitos del norte, general de las legiones Fénix, leal servidor del verdadero emperador Marco Aurelio. Padre de un hijo asesinado, esposo de una esposa asesinada, y juro que me vengaré, en esta vida o en la otra</p>
         <a href="#" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
 </div>
+
 
 
 
