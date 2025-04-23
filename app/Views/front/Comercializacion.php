@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+
 <!-- tipos de entregas -->
     <div class="expand-container">
         <div class="expand-toggle" onclick="toggleDropdown(this)">📦 Tipos de Entregas</div>
