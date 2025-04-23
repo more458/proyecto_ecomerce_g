@@ -1,48 +1,130 @@
-<?php
+<!--ACTUALIZACION-->
+  <?php
 $tituloVar = "titulo";
 $$tituloVar = "bienvenidos a mi pagina web";
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $$tituloVar; ?></title>
-    <script src="assets/css/bootstrap.min.css"></script>
-    <link rel = "stylesheet" href = "assets/css/miestilo.css">
-    <link rel = "stylesheet" href = "assets/js/bootstrap.bundle.min.js">
-
+    <link rel="stylesheet" href="assets/css/style.css">
+    
 </head>
 
 <body>
-    <h1><?php echo $$tituloVar; ?></h1>
-    <!-- imagenes -->
-    <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="assets/img/donas.jpg" class="d-block w-100" alt="alta dona">
-    </div>
-    <div class="carousel-item">
-      <img src="assets/img/dubai.webp" class="d-block w-100" alt="re de cheto">
-    </div>
-    <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
-  </div>
-  <!-- botones -->
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
+<h1><?php echo $$tituloVar; ?></h1>
 
-<!-- js de los sliders -->
- <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <div class="slider">
 
+
+        <div class="list">
+
+            <div class="item">
+                <img src="assets/img/donas.jpg" alt="">
+
+                <div class="content">
+                    <div class="title">SWEET VIBE'S</div>
+                    <div class="type">¡CONOCE NUESTRAS DONAS!</div>
+                    <div class="description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti temporibus quis eum
+                        consequuntur voluptate quae doloribus distinctio. Possimus, sed recusandae. Lorem ipsum dolor
+                        sit amet consectetur adipisicing elit. Sequi, aut.
+                    </div>
+                    <div class="button">
+                        <button>SEE MORE</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="assets/img/chocos.jpg" alt="">
+
+                <div class="content">
+                    <div class="title">SWEET VIBE'S</div>
+                    <div class="type">¡NUESTRO CHOCOLATE!</div>
+                    <div class="description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti temporibus quis eum
+                        consequuntur voluptate quae doloribus distinctio. Possimus, sed recusandae. Lorem ipsum dolor
+                        sit amet consectetur adipisicing elit. Sequi, aut.
+                    </div>
+                    <div class="button">
+                        <button>SEE MORE</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="assets/img/sandia.jpg" alt="">
+
+                <div class="content">
+                    <div class="title">SWEET VIBE'S</div>
+                    <div class="type">¡GOMITAS!</div>
+                    <div class="description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti temporibus quis eum
+                        consequuntur voluptate quae doloribus distinctio. Possimus, sed recusandae. Lorem ipsum dolor
+                        sit amet consectetur adipisicing elit. Sequi, aut.
+                    </div>
+                    <div class="button">
+                        <button>SEE MORE</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="assets/img/dubai.webp" alt="">
+
+                <div class="content">
+                    <div class="title">SWEET VIBE'S</div>
+                    <div class="type">¡TENDENCIAS!</div>
+                    <div class="description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti temporibus quis eum
+                        consequuntur voluptate quae doloribus distinctio. Possimus, sed recusandae. Lorem ipsum dolor
+                        sit amet consectetur adipisicing elit. Sequi, aut.
+                    </div>
+                    <div class="button">
+                        <button>SEE MORE</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="thumbnail">
+
+            <div class="item">
+                <img src="assets/img/donas.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="assets/img/chocos.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="assets/img/sandia.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="assets/img/dubai.webp" alt="">
+            </div>
+
+        </div>
+
+
+        <div class="nextPrevArrows">
+            <button class="prev">
+                < </button>
+                    <button class="next"> > </button>
+        </div>
+
+
+    </div>
+
+
+    <script src="assets/js/app.js"></script>
 </body>
+
 </html>
+
+
