@@ -1,7 +1,7 @@
 <!--ACTUALIZACION-->
   <?php
 $tituloVar = "titulo";
-$$tituloVar = "bienvenidos a mi pagina web";
+$$tituloVar = "¡BIENVENIDOS";
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +17,7 @@ $$tituloVar = "bienvenidos a mi pagina web";
 
 <body>
 <h1><?php echo $$tituloVar; ?></h1>
-
+<br><br>
     <div class="slider">
 
 

@@ -1,13 +1,19 @@
+<?php
+$tituloVar = "titulo";
+$$tituloVar = "¡Como comercializamos!";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "stylesheet" href = "assets/css/comer.css">
-    <title>Document</title>
+    <title><?php echo $$tituloVar; ?></title>
 </head>
 <body>
 
+<h1 class="text-center mb-4 titulo-bienvenida"><?php echo $$tituloVar; ?></h1>
 <!-- tipos de entregas -->
     <div class="expand-container">
         <div class="expand-toggle" onclick="toggleDropdown(this)">📦 Tipos de Entregas</div>
