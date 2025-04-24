@@ -30,8 +30,18 @@
         <p>Todo el contenido es propiedad de la tienda. No está permitida su reproducción sin autorización.</p>
         <h3>Modificaciones</h3>
         <p>Nos reservamos el derecho de modificar estos términos en cualquier momento.</p>
-        
+        <button class="aceptar-btn" onclick="mostrarMensaje()">Aceptar</button>
+        <div class="mensaje-confirmacion" id="mensajeAceptado">
+            Gracias por aceptar los términos y condiciones ahora tu alma nos pertenece.
+        </div>
     </div>
-    
+
+<script>
+  function mostrarMensaje() {
+    document.getElementById("mensajeAceptado").style.display = "block";
+  }
+</script>
+
+
 </body>
 </html>

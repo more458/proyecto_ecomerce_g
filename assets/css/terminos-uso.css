@@ -1,6 +1,25 @@
 * {
     box-sizing: border-box;
 }
+
+.aceptar-btn {
+    margin-top: 30px;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #c62828;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.mensaje-confirmacion {
+    display: none;
+    margin-top: 20px;
+    font-weight: bold;
+    color: green;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
