@@ -1,53 +1,61 @@
+<!--ACTUALIZACION 26/04-->
+<footer class="bg-light text-muted" style="font-family: Arial, sans-serif;">
+  <div class="container py-5">
+    <div class="row">
 
-<footer class="footer">
-  <div class="footer-container">
-    <div class="footer-column">
-      <h3>Experiencia del cliente</h3>
-      <ul>
-        <li><a href="#">Hacenos tu consulta</a></li>
-        <li>+54 12 3456 789<br><a href="#">Comprá por Whatsapp</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-column">
-      <h3>Información de compra</h3>
-      <ul>
-        <li><a href="#">Medios de pago</a></li>
-        <li><a href="#">Información de envíos</a></li>
-        <li><a href="#">Preguntas frecuentes</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-column">
-      <h3>Somos Sweet Vibes</h3>
-      <ul>
-        <li><a href="#">Sobre Nosotroa</a></li>
-        <li><a href="#">Términos y Condiciones</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-column">
-      <h3>Conocenos</h3>
-      <div class="redes">
-        <a href="https://www.tiktok.com/" target="_blank" style="margin: 0 10px; color: #000; font-size: 24px;">
-           <i class="fab fa-tiktok"></i>
-        </a>
-        <a href="https://www.instagram.com/" target="_blank" style="margin: 0 10px; color: #000; font-size: 24px;">
-           <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://www.facebook.com/" target="_blank" style="margin: 0 10px; color: #000; font-size: 24px;">
-        <i class="fab fa-facebook-f"></i>
-        </a>
-
+      <!-- Columnas de Sección -->
+      <div class="col-6 col-md-2 mb-4">
+        <h6 class="text-dark">Experiencia del cliente</h6>
+        <ul class="list-unstyled">
+          <li><a href="Info_contact" class="text-muted text-decoration-none">Hacenos tu consulta</a></li>
+          <li><a href="#" class="text-muted text-decoration-none">Comprá por Whatsapp</a></li>
+        </ul>
       </div>
-      <div class="pais">
-        <img src="https://flagcdn.com/ar.svg" alt="Argentina">
-        <span>Argentina</span>
+
+      <div class="col-6 col-md-2 mb-4">
+        <h6 class="text-dark">Información de compra</h6>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-muted text-decoration-none">Medios de pago</a></li>
+          <li><a href="#" class="text-muted text-decoration-none">Información de envíos</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-2 mb-4">
+        <h6 class="text-dark">Somos Sweet Vibes</h6>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-muted text-decoration-none">Sobre Nosotros</a></li>
+          <li><a href="#" class="text-muted text-decoration-none">Términos y Condiciones</a></li>
+        </ul>
+      </div>
+
+      <!-- Suscripción -->
+      <div class="col-12 col-md-6 mb-4">
+        <h6 class="text-dark">Suscríbete a nuestro boletín</h6>
+        <p class="small text-muted">
+          Resumen mensual de nuestras novedades y artículos más interesantes.
+        </p>
+        <form class="d-flex">
+          <input type="email" class="form-control me-2" placeholder="Dirección de correo electrónico">
+          <button type="submit" class="btn btn-dark">Suscribir</button>
+        </form>
+      </div>
+
+    </div>
+
+    <hr>
+
+    <div class="row align-items-center">
+      <div class="col-12 col-md-6 text-center text-md-start mb-3 mb-md-0">
+        <small>&copy; 2022 Sweet Vibe's. Todos los derechos reservados.</small>
+      </div>
+      <div class="col-12 col-md-6 text-center text-md-end">
+        <a href="#" class="text-muted fs-5 mx-2"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-muted fs-5 mx-2"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="text-muted fs-5 mx-2"><i class="fab fa-facebook-f"></i></a>
       </div>
     </div>
   </div>
-
-
+  
   <script src="assets/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/app.js"></script>
 
