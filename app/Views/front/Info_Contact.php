@@ -1,23 +1,8 @@
-<?php
-$tituloVar = "titulo";
-$$tituloVar = "¡CONTÁCTANOS!";
-?>
 
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><?php echo $$tituloVar; ?></title>
-  <link rel="stylesheet" href="assets/css/contacto.css">
-  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
-
-<body>
-  <h1 class="text-center mb-4 titulo-bienvenida"><?php echo $$tituloVar; ?></h1>
-
+<body class="contact-body">
+<div class="titulo">  
+  <h1 class="contact-h1"><?php echo $$titulo="Información de Contacto"?></h1>
+</div>
   <!-- IMAGEN DE FONDO -->
   <div class="imagen-fondo">
     <img src="assets/img/fondo.jpg" alt="fondo">
@@ -92,8 +77,6 @@ $$tituloVar = "¡CONTÁCTANOS!";
   </div>
 
   <br><br>
-  <!-- donde validamos el formulario, todos los campos -->
-  <script src="assets/js/contacto.js"></script>
+  
 </body>
 
-</html>

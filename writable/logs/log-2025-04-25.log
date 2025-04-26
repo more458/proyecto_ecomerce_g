@@ -1,0 +1,54 @@
+CRITICAL - 2025-04-25 21:32:50 --> ErrorException: Undefined variable $tituloVar
+[Method: GET, Route: Casa]
+in APPPATH\Views\front\plantilla.php on line 4.
+ 1 APPPATH\Views\front\plantilla.php(4): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $tituloVar', 'C:\\xampp\\htdocs\\proyecto_ecomerce_TomasMoreno_JulietaGauna\\app\\Views\\front\\plantilla.php', 4)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\proyecto_ecomerce_TomasMoreno_JulietaGauna\\app\\Views\\front\\plantilla.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('front/plantilla', [], true)
+ 5 APPPATH\Controllers\Home.php(14): view('front/plantilla')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-25 21:33:55 --> ParseError: syntax error, unexpected token ">"
+[Method: GET, Route: Casa]
+in APPPATH\Views\front\footer_view.php on line 63.
+ 1 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('front/footer_view', [], true)
+ 3 APPPATH\Controllers\Home.php(15): view('front/footer_view')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-25 21:34:12 --> ErrorException: Undefined variable $tituloVar
+[Method: GET, Route: Casa]
+in APPPATH\Views\front\footer_view.php on line 66.
+ 1 APPPATH\Views\front\footer_view.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $tituloVar', 'C:\\xampp\\htdocs\\proyecto_ecomerce_TomasMoreno_JulietaGauna\\app\\Views\\front\\footer_view.php', 66)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\proyecto_ecomerce_TomasMoreno_JulietaGauna\\app\\Views\\front\\footer_view.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('front/footer_view', [], true)
+ 5 APPPATH\Controllers\Home.php(15): view('front/footer_view')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-25 22:39:36 --> ErrorException: Undefined variable $tituloVar
+[Method: GET, Route: Info_contact]
+in APPPATH\Views\front\Info_Contact.php on line 3.
+ 1 APPPATH\Views\front\Info_Contact.php(3): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $tituloVar', 'C:\\xampp\\htdocs\\proyecto_ecomerce_TomasMoreno_JulietaGauna\\app\\Views\\front\\Info_Contact.php', 3)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\proyecto_ecomerce_TomasMoreno_JulietaGauna\\app\\Views\\front\\Info_Contact.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('front/Info_Contact', [], true)
+ 5 APPPATH\Controllers\Home.php(49): view('front/Info_Contact')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->Contact()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

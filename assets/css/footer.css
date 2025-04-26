@@ -1,14 +1,10 @@
 /*FOOTER*/
-body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      
-    }
-
-    footer {
+.footer {
       background-color: #ffffff;
       color: #333;
       padding: 40px 20px;
+      margin: 0;
+      font-family: Arial, sans-serif;
     }
 
     .footer-container {
@@ -62,4 +58,4 @@ body {
         .footer-column {
           margin: 10px 0;
         }
-      
+      }

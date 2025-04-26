@@ -1,20 +1,10 @@
-<?php
-$tituloVar = "titulo";
-$$tituloVar = "¡Quienes somos!";
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $$tituloVar; ?></title>
-    <link rel = "stylesheet" href = "assets/css/qienesSomos.css">
-    <link rel = "stylesheet" href = "assets/css/bootstrap.min.css">
-</head>
-<body>
 
-<h1><?php echo $$tituloVar; ?></h1>
+
 <!-- quienes somos -->
+<body class="body-quienes">
+    <div class="us">
+    <h1 class="quienes-h1"><?php echo $$titulo="Sobre Nostros"?></h1>
+    </div>
     <div class="us">
         <div class="c">
             ¿Quiénes Somos?
@@ -42,7 +32,7 @@ $$tituloVar = "¡Quienes somos!";
 
 <!-- cartas de identidad -->
 <div class="us">
-    <h2>Personal del Staff</h2>
+    <h2 class="h2-staff">Personal del Staff</h2>
 </div>
 <div class="us">
     <div class="card" style="width: 18rem;">
@@ -54,12 +44,4 @@ $$tituloVar = "¡Quienes somos!";
       </div>
     </div>
 </div>
-
-
-
-
-
-
-
 </body>
-</html>

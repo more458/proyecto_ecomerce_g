@@ -1,4 +1,4 @@
-body {
+body.comer-body {
     background-image: url('assets/img/donas.jpg');
     background-size: cover;
     background-position: center;
@@ -9,11 +9,22 @@ body {
 
 }
 
+.titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.comer-h1{
+    text-align: center;
+}
 
 .expand-container {
     width: 100%;
     max-width: 600px;
     margin: 1rem auto;
+    
 }
 
 .expand-toggle {

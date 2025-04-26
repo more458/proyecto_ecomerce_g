@@ -1,15 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = "stylesheet" href = "assets/css/terminos-uso.css">
-    <title>Document</title>
-</head>
-<body>
+
+<body class="terminos-body">
 
     <div class="terminos-container">
-        <h2>Términos y condiciones</h2>
+        <h2><?php echo $$titulo="Terminos de Uso"?></h2>
         <h3>Aceptación de los Términos</h3>
         <p>Al acceder y utilizar este sitio, el usuario acepta los términos y condiciones aquí expuestos.</p>
         <h3>Uso del Sitio</h3>
@@ -36,12 +29,4 @@
         </div>
     </div>
 
-<script>
-  function mostrarMensaje() {
-    document.getElementById("mensajeAceptado").style.display = "block";
-  }
-</script>
-
-
 </body>
-</html>

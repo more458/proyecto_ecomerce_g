@@ -1,16 +1,5 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Footer Isadora</title>
-  <!--FONT AWEDOME-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel = "stylesheet" href = "assets/css/footer.css">
 
-</head>
-<body>
-
-<footer>
+<footer class="footer">
   <div class="footer-container">
     <div class="footer-column">
       <h3>Experiencia del cliente</h3>
@@ -57,7 +46,34 @@
       </div>
     </div>
   </div>
+
+
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/app.js"></script>
+
+<!-- js para desplegar la tabla de comercializacion -->
+<script>
+        function toggleDropdown(el) {
+            const container = el.parentElement;
+            const content = container.querySelector('.expand-box');
+            content.classList.toggle('open');
+        }
+</script>
+
+<!-- script de terminos y usos-->
+<script>
+  function mostrarMensaje() {
+    document.getElementById("mensajeAceptado").style.display = "block";
+  }
+</script>
+
+<!--script de contacto donde validamos el formulario, todos los campos -->
+<script src="assets/js/contacto.js"></script>
+
 </footer>
 
-</body>
+
 </html>
+
+
+

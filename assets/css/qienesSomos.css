@@ -1,6 +1,7 @@
-p {
-    font-family:sans-serif;
 
+.quienes-h1{
+    text-align: center;
+    color: black;
 }
 
 .us{
@@ -37,7 +38,7 @@ p {
     margin-right: 100px; 
 }
 
-h2{
+.h2-staff{
     text-align: center;
     font-family: sans-serif;
 }

@@ -1,20 +1,11 @@
-<?php
-$tituloVar = "titulo";
-$$tituloVar = "¡Como comercializamos!";
-?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = "stylesheet" href = "assets/css/comer.css">
-    <title><?php echo $$tituloVar; ?></title>
-</head>
-<body>
 
-<h1 class="text-center mb-4 titulo-bienvenida"><?php echo $$tituloVar; ?></h1>
+<body class="comer-body">
+
 <!-- tipos de entregas -->
+<div class="titulo">
+    <h1 class="comer-h1"><?php echo $$titulo="Comercializacion"?></h1>
+</div>
     <div class="expand-container">
         <div class="expand-toggle" onclick="toggleDropdown(this)">📦 Tipos de Entregas</div>
         <div class="expand-box">
@@ -63,13 +54,5 @@ $$tituloVar = "¡Como comercializamos!";
         </div>
     </div>
 
-    <!-- js para desplegar la tabla -->
-    <script>
-        function toggleDropdown(el) {
-            const container = el.parentElement;
-            const content = container.querySelector('.expand-box');
-            content.classList.toggle('open');
-        }
-    </script>
+    
 </body>
-</html>

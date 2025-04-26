@@ -10,7 +10,7 @@ class Home extends BaseController
     {
         $tituloVar['titulo'] = 'principal';
         echo view('front/header_view', $tituloVar);
-        //echo view('front/nav_view');
+        echo view('front/nav_view');
         echo view('front/plantilla');
         echo view('front/footer_view');
     }
@@ -19,7 +19,7 @@ class Home extends BaseController
     {
         $tituloVar['titulo']='quienes somos';
         echo view ('front/header_view',$tituloVar);
-        //echo view ('front/nav_view');
+        echo view ('front/nav_view');
         echo view ('front/quienesSomos');
         echo view ('front/footer_view');
     }
@@ -28,7 +28,7 @@ class Home extends BaseController
     {
         $tituloVar['titulo']='Comercializacion';
         echo view ('front/header_view',$tituloVar);
-        //echo view ('front/nav_view');
+        echo view ('front/nav_view');
         echo view ('front/Comercializacion');
         echo view ('front/footer_view');
     }
@@ -36,7 +36,7 @@ class Home extends BaseController
     public function terminosUso(){
         $tituloVar['titulo']='Comercializacion';
         echo view ('front/header_view',$tituloVar);
-        //echo view ('front/nav_view');
+        echo view ('front/nav_view');
         echo view ('front/Terminos_Uso');
         echo view ('front/footer_view');  
     }
@@ -45,7 +45,7 @@ class Home extends BaseController
     {
         $tituloVar['titulo']='Comercializacion';
         echo view ('front/header_view',$tituloVar);
-        //echo view ('front/nav_view');
+        echo view ('front/nav_view');
         echo view ('front/Info_Contact');
         echo view ('front/footer_view');  
     }

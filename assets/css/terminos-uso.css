@@ -1,6 +1,6 @@
-* {
+/** {
     box-sizing: border-box;
-}
+}*/
 
 .aceptar-btn {
     margin-top: 30px;
@@ -20,10 +20,9 @@
     color: green;
 }
 
-body {
+body.terminos-body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 20px;
     background-color: #fff;
     color: #333;
 }

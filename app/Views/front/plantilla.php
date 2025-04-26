@@ -1,22 +1,9 @@
-<!--ACTUALIZACION-->
-  <?php
-$tituloVar = "titulo";
-$$tituloVar = "¡BIENVENIDOS";
-?>
 
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $$tituloVar; ?></title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    
-</head>
-
-<body>
-<h1><?php echo $$tituloVar; ?></h1>
+<body class="body-plantilla">
+<div class="titulo">    
+    <h1 class="plantilla-h1"><?php echo $$titulo="!Bienvenidos!"?></h1>
+</div>
 <br><br>
     <div class="slider">
 
@@ -25,7 +12,7 @@ $$tituloVar = "¡BIENVENIDOS";
 
             <div class="item">
                 <img src="assets/img/donas.jpg" alt="">
-
+                
                 <div class="content">
                     <div class="title">SWEET VIBE'S</div>
                     <div class="type">¡CONOCE NUESTRAS DONAS!</div>
@@ -122,9 +109,8 @@ $$tituloVar = "¡BIENVENIDOS";
     </div>
 
 
-    <script src="assets/js/app.js"></script>
+    
 </body>
 
-</html>
 
 
