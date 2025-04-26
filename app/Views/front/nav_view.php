@@ -1,5 +1,5 @@
 <header class="header-nav">
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top"">
   <div class="container-fluid">
     <a class="navbar-brand pacifico-regular" href="Casa">SV</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,8 +24,7 @@
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href='Info_contact'>Informacion de contacto</a></li>
             <li><a class="dropdown-item" href='Terminos_Uso'>Terminos de Uso</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            
           </ul>
         </li>
         <li class="nav-item">
