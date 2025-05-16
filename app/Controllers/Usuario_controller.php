@@ -4,14 +4,15 @@ namespace App\Controllers;
 use App\Models\Usuarios_model;
 use CodeIgniter\Controller;
 
-class Usuarios_controller extends Controller{
-    public function__construct(){
+class Usuario_controller extends Controller{
+    public function __construct()
+    {
         helper(['form', 'url']);
     }
 
     public function create(){
         $dato['titulo']='Registro';
-        echo view('front/head_view', $dato);
+        echo view('front/header_view', $dato);
         echo view('front/nav_view');
         echo view('back/usuario/registro');
         echo view('front/footer_view');

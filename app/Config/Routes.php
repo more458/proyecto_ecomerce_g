@@ -13,7 +13,7 @@ $routes->get('Info_contact', 'Home::Contact');
 $routes->get('Terminos_Uso', 'Home::terminosUso');
 
 /*rutas del registro de usuario*/
-$routes->get('/registro', 'Home::registro');
+$routes->get('registro', 'Usuario_controller::create');
 $routes->post('/enviar-form','Usuario_controller::formValidation'); 
 
 

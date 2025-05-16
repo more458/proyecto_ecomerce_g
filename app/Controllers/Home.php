@@ -49,4 +49,6 @@ class Home extends BaseController
         echo view ('front/Info_Contact');
         echo view ('front/footer_view');  
     }
+
+    
 }
