@@ -23,20 +23,21 @@ class Usuario_controller extends Controller{
             'nombre'    => 'required|min_length[3]',      
             'apellido'  => 'required|min_length[3]|max_length[50]',
             'usuario'   => 'required|min_length[3]',
-            'email'     => 'required|min_length[4]|max_length[100]|valid_email|is_unique[usarios.email]',
+            'email'     => 'required|min_length[4]|max_length[100]|valid_email|is_unique[usuarios.email]',
             'pass'      => 'required|min_length[3]|max_length[10]'
 
         ],
         );
 
-        $formModel = new Usuario_model();
+        $formModel = new Usuarios_model();
 
         if (!$input) {
             $data['titulo'] = 'registro';
-            echo view('front/head_view', $dato);
+            echo view('front/header_view', $data);
             echo view('front/nav_view');
-            echo view('back/ususario/registro', ['validation' => $this->validator]);
+            echo view('back/usuario/registro', ['validation' => $this->validator]);
             echo view('front/footer_view');
+            
 
         } else {
             $formModel->save([
@@ -49,7 +50,7 @@ class Usuario_controller extends Controller{
             ]);
             // Flashdata funciona solo en redirigir la funcion en el controlador a la vista de carga
             session()->setFlashdata('succes', 'Usuario registrado con exito');
-            return $this->response->redirect(to_url('/registro'));
+            return redirect()->to(base_url('registro'));
         }
     }
 }

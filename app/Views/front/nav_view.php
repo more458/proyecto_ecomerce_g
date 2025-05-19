@@ -18,7 +18,7 @@
           <a class="nav-link" href='Comercializacion'>Comercializacion</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href='Comercializacion'>Registrarse</a>
+          <a class="nav-link" href='registro'>Registrarse</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

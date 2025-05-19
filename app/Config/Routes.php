@@ -14,6 +14,6 @@ $routes->get('Terminos_Uso', 'Home::terminosUso');
 
 /*rutas del registro de usuario*/
 $routes->get('registro', 'Usuario_controller::create');
-$routes->post('/enviar-form','Usuario_controller::formValidation'); 
+$routes->post('enviar-form','Usuario_controller::formValidation'); 
 
 

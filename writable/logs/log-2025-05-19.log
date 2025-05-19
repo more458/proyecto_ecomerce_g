@@ -1,0 +1,288 @@
+DEBUG - 2025-05-19 14:16:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-19 14:16:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-19 14:38:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-19 14:39:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-19 14:40:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-19 14:46:07 --> ErrorException: Undefined variable $dato
+[Method: POST, Route: enviar-form]
+in APPPATH\Controllers\Usuario_controller.php on line 36.
+ 1 APPPATH\Controllers\Usuario_controller.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $dato', 'C:\\xampp\\htdocs\\proyecto_ecomerce_TomasMoreno_JulietaGauna\\app\\Controllers\\Usuario_controller.php', 36)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Usuario_controller->formValidation()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-19 14:48:26 --> ErrorException: Undefined variable $dato
+[Method: POST, Route: enviar-form]
+in APPPATH\Controllers\Usuario_controller.php on line 36.
+ 1 APPPATH\Controllers\Usuario_controller.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $dato', 'C:\\xampp\\htdocs\\proyecto_ecomerce_TomasMoreno_JulietaGauna\\app\\Controllers\\Usuario_controller.php', 36)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Usuario_controller->formValidation()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-19 14:49:03 --> ErrorException: Undefined variable $dato
+[Method: POST, Route: enviar-form]
+in APPPATH\Controllers\Usuario_controller.php on line 36.
+ 1 APPPATH\Controllers\Usuario_controller.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $dato', 'C:\\xampp\\htdocs\\proyecto_ecomerce_TomasMoreno_JulietaGauna\\app\\Controllers\\Usuario_controller.php', 36)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Usuario_controller->formValidation()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-19 14:49:07 --> ErrorException: Undefined variable $dato
+[Method: POST, Route: enviar-form]
+in APPPATH\Controllers\Usuario_controller.php on line 36.
+ 1 APPPATH\Controllers\Usuario_controller.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $dato', 'C:\\xampp\\htdocs\\proyecto_ecomerce_TomasMoreno_JulietaGauna\\app\\Controllers\\Usuario_controller.php', 36)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Usuario_controller->formValidation()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-19 14:49:38 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "back/ususario/registro.php"
+[Method: POST, Route: enviar-form]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('back/ususario/registro.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('back/ususario/registro', [], true)
+ 3 APPPATH\Controllers\Usuario_controller.php(38): view('back/ususario/registro', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Usuario_controller->formValidation()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-19 14:56:51 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "back/ususario/registro.php"
+[Method: POST, Route: enviar-form]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('back/ususario/registro.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('back/ususario/registro', [], true)
+ 3 APPPATH\Controllers\Usuario_controller.php(38): view('back/ususario/registro', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Usuario_controller->formValidation()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-19 14:59:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-19 15:00:13 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "back/ususario/registro.php"
+[Method: POST, Route: enviar-form]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('back/ususario/registro.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('back/ususario/registro', [], true)
+ 3 APPPATH\Controllers\Usuario_controller.php(38): view('back/ususario/registro', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Usuario_controller->formValidation()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-19 15:01:48 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "back/ususario/registro.php"
+[Method: POST, Route: enviar-form]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('back/ususario/registro.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('back/ususario/registro', [], true)
+ 3 APPPATH\Controllers\Usuario_controller.php(38): view('back/ususario/registro', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Usuario_controller->formValidation()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-19 15:02:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-19 15:02:04 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "back/ususario/registro.php"
+[Method: POST, Route: enviar-form]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('back/ususario/registro.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('back/ususario/registro', [], true)
+ 3 APPPATH\Controllers\Usuario_controller.php(38): view('back/ususario/registro', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Usuario_controller->formValidation()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-19 15:30:18 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "back/ususario/registro.php"
+[Method: POST, Route: enviar-form]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('back/ususario/registro.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('back/ususario/registro', [], true)
+ 3 APPPATH\Controllers\Usuario_controller.php(38): view('back/ususario/registro', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Usuario_controller->formValidation()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-19 15:31:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-19 15:31:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-19 16:10:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-19 16:11:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-19 16:11:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-19 16:11:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-19 16:17:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-19 16:17:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-19 16:17:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-19 16:18:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-19 16:18:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-19 16:18:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-19 16:22:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-19 16:22:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-19 16:22:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-19 16:23:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-19 16:23:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-19 16:23:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-19 16:24:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-19 16:24:55 --> Error: Call to undefined function App\Controllers\to_url()
+[Method: POST, Route: enviar-form]
+in APPPATH\Controllers\Usuario_controller.php on line 40.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Usuario_controller->formValidation()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-19 16:26:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-19 16:26:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-19 16:26:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-19 16:28:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-19 16:28:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-19 16:29:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-19 16:29:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-19 16:29:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-19 16:29:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-19 16:31:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-19 16:31:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-19 16:31:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-19 16:33:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-19 16:43:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-19 16:43:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-19 16:43:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-19 16:44:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-19 16:45:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-19 16:53:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-19 16:53:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-19 16:53:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-19 16:54:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-19 17:06:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-05-19 17:07:42 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: YES) in C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'ci4', 3306, '', 0)
+#1 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('carlos.fernande...', 'usuarios.email', Array)
+#6 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\Validation\Validation.php(337): CodeIgniter\Validation\StrictRules\Rules->is_unique('carlos.fernande...', 'usuarios.email', Array, NULL, 'email')
+#7 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\Validation\Validation.php(202): CodeIgniter\Validation\Validation->processRules('email', 'email', 'carlos.fernande...', Array, Array, 'email')
+#8 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#9 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\app\Controllers\Usuario_controller.php(22): CodeIgniter\Controller->validate(Array)
+#10 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\CodeIgniter.php(933): App\Controllers\Usuario_controller->formValidation()
+#11 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+#12 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#14 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#15 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#16 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('carlos.fernande...', 'usuarios.email', Array)
+#5 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\Validation\Validation.php(337): CodeIgniter\Validation\StrictRules\Rules->is_unique('carlos.fernande...', 'usuarios.email', Array, NULL, 'email')
+#6 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\Validation\Validation.php(202): CodeIgniter\Validation\Validation->processRules('email', 'email', 'carlos.fernande...', Array, Array, 'email')
+#7 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\app\Controllers\Usuario_controller.php(22): CodeIgniter\Controller->validate(Array)
+#9 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\CodeIgniter.php(933): App\Controllers\Usuario_controller->formValidation()
+#10 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+#11 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 {main}
+CRITICAL - 2025-05-19 17:07:42 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+[Method: POST, Route: enviar-form]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `usuarios`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('carlos.fernandez@example.com', 'usuarios.email', [...])
+ 5 SYSTEMPATH\Validation\Validation.php(337): CodeIgniter\Validation\StrictRules\Rules->is_unique('carlos.fernandez@example.com', 'usuarios.email', [...], null, 'email')
+ 6 SYSTEMPATH\Validation\Validation.php(202): CodeIgniter\Validation\Validation->processRules('email', 'email', 'carlos.fernandez@example.com', [...], [...], 'email')
+ 7 SYSTEMPATH\Controller.php(138): CodeIgniter\Validation\Validation->run()
+ 8 APPPATH\Controllers\Usuario_controller.php(22): CodeIgniter\Controller->validate([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Usuario_controller->formValidation()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-05-19 17:11:57 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: YES) in C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'ci4', 3306, '', 0)
+#1 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('carlos.fernande...', 'usuarios.email', Array)
+#6 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\Validation\Validation.php(337): CodeIgniter\Validation\StrictRules\Rules->is_unique('carlos.fernande...', 'usuarios.email', Array, NULL, 'email')
+#7 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\Validation\Validation.php(202): CodeIgniter\Validation\Validation->processRules('email', 'email', 'carlos.fernande...', Array, Array, 'email')
+#8 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#9 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\app\Controllers\Usuario_controller.php(22): CodeIgniter\Controller->validate(Array)
+#10 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\CodeIgniter.php(933): App\Controllers\Usuario_controller->formValidation()
+#11 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+#12 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#14 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#15 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#16 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('carlos.fernande...', 'usuarios.email', Array)
+#5 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\Validation\Validation.php(337): CodeIgniter\Validation\StrictRules\Rules->is_unique('carlos.fernande...', 'usuarios.email', Array, NULL, 'email')
+#6 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\Validation\Validation.php(202): CodeIgniter\Validation\Validation->processRules('email', 'email', 'carlos.fernande...', Array, Array, 'email')
+#7 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\app\Controllers\Usuario_controller.php(22): CodeIgniter\Controller->validate(Array)
+#9 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\CodeIgniter.php(933): App\Controllers\Usuario_controller->formValidation()
+#10 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+#11 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\proyecto_ecomerce_TomasMoreno_JulietaGauna\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 {main}
+CRITICAL - 2025-05-19 17:11:57 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+[Method: POST, Route: enviar-form]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `usuarios`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('carlos.fernandez@example.com', 'usuarios.email', [...])
+ 5 SYSTEMPATH\Validation\Validation.php(337): CodeIgniter\Validation\StrictRules\Rules->is_unique('carlos.fernandez@example.com', 'usuarios.email', [...], null, 'email')
+ 6 SYSTEMPATH\Validation\Validation.php(202): CodeIgniter\Validation\Validation->processRules('email', 'email', 'carlos.fernandez@example.com', [...], [...], 'email')
+ 7 SYSTEMPATH\Controller.php(138): CodeIgniter\Validation\Validation->run()
+ 8 APPPATH\Controllers\Usuario_controller.php(22): CodeIgniter\Controller->validate([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Usuario_controller->formValidation()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
