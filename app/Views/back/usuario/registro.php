@@ -28,8 +28,8 @@
 
             <!--nombre-->
             <div class="mb-2">
-                <label for="exampleFormControlInput1" class="form-label">Nombre</label>
-                <input name="nombre" type="text" class="form-control" placeholder="nombre">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input name="nombre" id="nombre" type="text" class="form-control" placeholder="nombre">
                 <?php if ($validation->getError('nombre')): ?>
                     <div class="alert alert-danger mt-2">
                         <?= $validation->getError('nombre'); ?>
@@ -39,8 +39,8 @@
             
             <!--apellido-->
             <div class="mb-2">
-                <label for="exampleFormControlTextarea1" class="form-label">Apellido</label>
-                <input type="text" name="apellido" class="form-control" placeholder="apellido">
+                <label for="apellido" class="form-label">Apellido</label>
+                <input type="text" id="apellido" name="apellido" class="form-control" placeholder="apellido">
                 <?php if ($validation->getError('apellido')): ?>
                     <div class="alert alert-danger mt-2">
                         <?= $validation->getError('apellido'); ?>
@@ -50,8 +50,8 @@
 
             <!-- email -->
             <div class="mb-2">
-                <label for="exampleFormControlTextarea1" class="form-label">Email</label>
-                <input type="email" name="email" class="form-control" placeholder="correo electronico">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="correo electronico">
                 <?php if ($validation->getError('email')): ?>
                     <div class="alert alert-danger mt-2">
                         <?= $validation->getError('email'); ?>
@@ -61,22 +61,22 @@
 
             <!-- nombre de usuario -->
             <div class="mb-2">
-                <label for="exampleFormControlTextarea1" class="form-label">Nombre de Usuario</label>
-                <input type="text" name="username" class="form-control" placeholder="usuario">
-                <?php if ($validation->getError('username')): ?>
+                <label for="usuario" class="form-label">Nombre de Usuario</label>
+                <input type="text" id="usuario" name="usuario" class="form-control" placeholder="usuario">
+                <?php if ($validation->getError('usuario')): ?>
                     <div class="alert alert-danger mt-2">
-                        <?= $validation->getError('username'); ?>
+                        <?= $validation->getError('usuario'); ?>
                     </div>
                 <?php endif; ?>
                 </div>
 
             <!-- Contraseña -->
-            <div class="mb-2">
-                <label for="exampleFormControlTextarea1" class="form-label">Contraseña</label>
-                <input type="password" name="password" class="form-control" placeholder="Contraseña">
-                <?php if ($validation->getError('password')): ?>
+            <div class="mb-3">
+                <label for="pass" class="form-label">Contraseña</label>
+                <input type="password" id="pass" name="pass" class="form-control" placeholder="Contraseña">
+                <?php if ($validation->getError('pass')): ?>
                     <div class="alert alert-danger mt-2">
-                        <?= $validation->getError('password'); ?>
+                        <?= $validation->getError('pass'); ?>
                     </div>
                 <?php endif; ?>
                 </div>
