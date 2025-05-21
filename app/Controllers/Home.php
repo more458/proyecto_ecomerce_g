@@ -50,7 +50,14 @@ class Home extends BaseController
         echo view ('front/footer_view');  
     }
 
-    
+    public function login()
+    {
+        $tituloVar['titulo']='Iniciar Sesion';
+        echo view ('front/header_view',$tituloVar);
+        echo view ('front/nav_view');
+        echo view ('back/usuario/login');
+        echo view ('front/footer_view');
+    }
 
     
 }

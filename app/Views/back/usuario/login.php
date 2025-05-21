@@ -1,11 +1,8 @@
-
-
-
 <div class="container pt-5 mt-5 mb-5">
     <div class="card-header text-justify">
         <div class="row d-flex justify-content-center">
             <div class="col-lg-3" style="width: 50%;">
-                <h4>Registrarse</h4>
+                <h4>Iniciar Sesion</h4>
             </div>
         </div>
     </div>
@@ -13,7 +10,7 @@
     <!-- usamos el servicio de validación de CodeIgniter Services::validation() -->
     <?php $validation = \Config\Services::validation(); ?>
 
-    <form method="post" action="<?= base_url('enviar-form') ?>">
+    <form method="post" action="<?= base_url('enviarlogin') ?>">
         <?= csrf_field(); ?> <!-- genera un campo oculto con el token de seguridad -->
 
         <?php if (!empty(session()->getFlashdata('fail'))): ?>
@@ -25,28 +22,6 @@
         <?php endif; ?>
 
         <div class="card-body justify-content-center media (max-width:768px)">
-
-            <!--nombre-->
-            <div class="mb-2">
-                <label for="nombre" class="form-label">Nombre</label>
-                <input name="nombre" id="nombre" type="text" class="form-control" placeholder="nombre">
-                <?php if ($validation->getError('nombre')): ?>
-                    <div class="alert alert-danger mt-2">
-                        <?= $validation->getError('nombre'); ?>
-                    </div>
-                <?php endif; ?>
-            </div>
-            
-            <!--apellido-->
-            <div class="mb-2">
-                <label for="apellido" class="form-label">Apellido</label>
-                <input type="text" id="apellido" name="apellido" class="form-control" placeholder="apellido">
-                <?php if ($validation->getError('apellido')): ?>
-                    <div class="alert alert-danger mt-2">
-                        <?= $validation->getError('apellido'); ?>
-                    </div>
-                <?php endif; ?>
-            </div>
 
             <!-- email -->
             <div class="mb-2">
@@ -68,7 +43,7 @@
                         <?= $validation->getError('usuario'); ?>
                     </div>
                 <?php endif; ?>
-                </div> 
+                </div>
 
             <!-- Contraseña -->
             <div class="mb-3">
@@ -83,7 +58,7 @@
                 
                 <!-- Boton de envio -->
             <div class="text-center">
-                <button type="submit" class="btn btn-primary">Registrarse</button>
+                <button type="submit" class="btn btn-primary">Iniciar Sesion</button>
             </div>
 
             </div>

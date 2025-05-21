@@ -53,4 +53,4 @@ class Usuario_controller extends Controller{
             return redirect()->to(base_url('registro'));
         }
     }
-}
+} 
