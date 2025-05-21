@@ -18,7 +18,7 @@ $routes->post('enviar-form','Usuario_controller::formValidation');
 
 /*rutas para el login*/
 $routes->get('Login', 'Home::login');
-$routes->post('enviarlogin', 'login_controller::auth');
+$routes->post('enviarlogin', 'Login_controller::auth');
 $routes->get('/panel', 'panel_controller::index', ['filter' => 'auth']);//nose para que sirve esto
-$routes->get('/logout', 'login_controller::logout');
+$routes->get('/logout', 'Login_controller::logout');
  

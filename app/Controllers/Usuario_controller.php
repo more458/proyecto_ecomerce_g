@@ -7,7 +7,7 @@ use CodeIgniter\Controller;
 class Usuario_controller extends Controller{
     public function __construct()
     {
-        helper(['form', 'url']);
+        helper(['form', 'url']); 
     }
 
     public function create(){
@@ -54,3 +54,4 @@ class Usuario_controller extends Controller{
         }
     }
 } 
+?>

@@ -33,18 +33,7 @@
                     </div>
                 <?php endif; ?>
             </div>
-
-            <!-- nombre de usuario -->
-            <div class="mb-2">
-                <label for="usuario" class="form-label">Nombre de Usuario</label>
-                <input type="text" id="usuario" name="usuario" class="form-control" placeholder="usuario">
-                <?php if ($validation->getError('usuario')): ?>
-                    <div class="alert alert-danger mt-2">
-                        <?= $validation->getError('usuario'); ?>
-                    </div>
-                <?php endif; ?>
-                </div>
-
+            
             <!-- Contraseña -->
             <div class="mb-3">
                 <label for="pass" class="form-label">Contraseña</label>

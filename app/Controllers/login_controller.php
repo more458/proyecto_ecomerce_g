@@ -1,7 +1,6 @@
-
 <?php
-namespace App\Controllers;
 
+namespace App\Controllers;
 use CodeIgniter\Controller;
 use App\Models\Usuarios_model;
 
@@ -61,10 +60,11 @@ class Login_controller extends BaseController
         }
     }
 
-    publc function logout()
+    public function logout()
     {
         $session = session();
         $session->destroy();
         return redirect()->to(base_url('plantilla'));
     }
 }
+?>
