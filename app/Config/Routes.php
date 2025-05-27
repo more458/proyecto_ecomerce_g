@@ -13,9 +13,9 @@ $routes->get('Info_contact', 'Home::Contact');
 $routes->get('Terminos_Uso', 'Home::terminosUso');
 
 /*rutas del registro de usuario*/
-$routes->get('perfil', 'Usuario_controller::perfil', ['filter' => 'auth']);
+$routes->get('registro', 'Usuario_controller::create');
 //verifica que el usuario haya iniciado sesión antes de permitir el acceso.
-$routes->get('dashboard', 'Dashboard::index', ['filter' => 'auth']);//Esto evita que usuarios no autenticados accedan a /perfil o /dashboard.
+//$routes->get('dashboard', 'Dashboard::index', ['filter' => 'auth']);//Esto evita que usuarios no autenticados accedan a /perfil o /dashboard.
 $routes->post('enviar-form','Usuario_controller::formValidation'); 
 
 /*rutas para el login*/
