@@ -47,6 +47,7 @@ class Usuario_controller extends Controller{
                 'email'     => $this->request->getVar('email'),
                 'pass'      => password_hash($this->request->getVar('pass'), PASSWORD_DEFAULT),
                 //pasword_hash() crea un nuevo hash de contraseña usando un algoritmo de hash de unico sentido
+                'perfil_id'  => 2
             ]);
             // Flashdata funciona solo en redirigir la funcion en el controlador a la vista de carga
             session()->setFlashdata('succes', 'Usuario registrado con exito');
