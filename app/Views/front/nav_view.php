@@ -47,7 +47,7 @@ $perfil=$session->get('perfil_id');?>
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
     </div>
-    <!--CLIENTE no logueado-->
+    <!--CLIENTE logueado-->
     <?php elseif(session()->perfil_id == 2): ?>
       <div class="btn btn-info active btnUser btn-sm">
         <a href="">CLIENTE: <?php echo session('nombre'); ?> </a>
@@ -64,12 +64,6 @@ $perfil=$session->get('perfil_id');?>
         </li>
         <li class="nav-item">
           <a class="nav-link" href='Comercializacion'>Comercializacion</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href='registro'>Registrarse</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href='Login'>IniciarSesion</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
