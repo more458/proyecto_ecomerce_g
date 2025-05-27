@@ -64,7 +64,7 @@ class Login_controller extends BaseController
     {
         $session = session();
         $session->destroy();
-        return redirect()->to(base_url('plantilla'));
+        return redirect()->to(base_url('/'));
     }
 }
 ?>

@@ -38,6 +38,7 @@ $perfil=$session->get('perfil_id');?>
             
           </ul>
         </li>
+        <a class="btn btn-danger btn-sm me-2" href="<?= base_url('logout'); ?>">Cerrar sesión</a>
         <li class="nav-item">
           <a class="nav-link disabled" aria-disabled="true"></a>
         </li>
@@ -75,6 +76,7 @@ $perfil=$session->get('perfil_id');?>
             
           </ul>
         </li>
+        <a class="btn btn-danger btn-sm me-2" href="<?= base_url('logout'); ?>">Cerrar sesión</a>
         <li class="nav-item">
           <a class="nav-link disabled" aria-disabled="true"></a>
         </li>
