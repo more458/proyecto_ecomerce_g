@@ -11,7 +11,7 @@ class Usuario_controller extends Controller{
     }
 
     public function create(){
-        $dato['titulo']='Registro';
+        $dato['titulo']='Registro'; 
         echo view('front/header_view', $dato);
         echo view('front/nav_view');
         echo view('back/usuario/registro');

@@ -1,7 +1,7 @@
 <?php
 namespace App\Controllers;
 use App\Models\Producto_Model;
-use App\Models\Usuario_Model;
+use App\Models\Usuarios_Model;
 use App\Models\Ventas_cabecera_model;
 use App\Models\Ventas_detalle_model;
 use App\Models\categoria_model;
