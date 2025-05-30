@@ -12,6 +12,7 @@ $routes->get('Comercializacion', 'Home::Comercializacion');
 $routes->get('Info_contact', 'Home::Contact');
 $routes->get('Terminos_Uso', 'Home::terminosUso');
 $routes->get('Catalogo_productos', 'Home::productos');
+$routes->get('form_alta', 'Home::alta_productos');
 
 /*rutas del registro de usuario*/
 $routes->get('registro', 'Usuario_controller::create');
@@ -38,3 +39,5 @@ $routes->get('activar_pro/(:num)', 'Productocontroller::activarproducto/$1',['fi
 
 
 $routes->get('vista_compras/(:num)', 'Ventascontroller::ver_factura/$1', ['filter' => 'auth']);
+
+

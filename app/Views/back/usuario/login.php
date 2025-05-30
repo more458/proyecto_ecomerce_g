@@ -10,15 +10,14 @@
     <!-- usamos el servicio de validación de CodeIgniter Services::validation() -->
     <?php $validation = \Config\Services::validation(); ?>
 
-    <form method="post" action="<?= base_url('enviarlogin') ?>">
+    <form method="post" action="<?= base_url('enviarlogin');?>">
         <?= csrf_field(); ?> <!-- genera un campo oculto con el token de seguridad -->
-
-        <?php if (!empty(session()->getFlashdata('fail'))): ?>
-            <div class="alert alert-danger"><?= session()->getFlashdata('fail'); ?></div>
+       <?php if (!empty(session()->getFlashdata('msg'))): ?>
+            <div class="alert alert-danger"><?= session()->getFlashdata('fmsg'); ?></div>
         <?php endif; ?>
 
-        <?php if (!empty(session()->getFlashdata('success'))): ?>
-            <div class="alert-success"><?= session()->getFlashdata('success'); ?></div>
+        <?php if (!empty(session()->getFlashdata('msg'))): ?>
+            <div class="alert-success"><?= session()->getFlashdata('msg'); ?></div>
         <?php endif; ?>
 
         <div class="card-body justify-content-center media (max-width:768px)">

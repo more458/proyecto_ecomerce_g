@@ -10,25 +10,25 @@ $perfil=$session->get('perfil_id');?>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <!--ACTUALIZACION: usuario logueado-->
-    <?php if($perfil == 1): ?>
+    <!--ACTUALIZACION: ADMIN logueado-->
+    <?php if(session()->perfil_id == 1): ?>
       <div class="btn btn-info active btnUser btn-sm">
-        <a href="">USUARIO: <?php echo session('nombre'); ?> </a>
-    </div>
+        <a href="">ADMIN: <?php echo session('nombre'); ?> </a>
+     </div>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href='Casa'>Home</a>
+          <a class="nav-link active" aria-current="page" href="<?php echo base_url('Casa');?>">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href='quienesSomos'>Quienes Somos</a>
+          <a class="nav-link" href='#'>CRUD Usuario</a>
 
         </li>
         <li class="nav-item">
-          <a class="nav-link" href='Comercializacion'>Comercializacion</a>
+          <a class="nav-link" href='#'>CRUD Productos</a>
         </li>
-        <li class="nav-item dropdown">
+        <!--<li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Mas
           </a>
@@ -37,7 +37,7 @@ $perfil=$session->get('perfil_id');?>
             <li><a class="dropdown-item" href='Terminos_Uso'>Terminos de Uso</a></li>
             
           </ul>
-        </li>
+        </li>-->
         <a class="btn btn-danger btn-sm me-2" href="<?= base_url('logout'); ?>">Cerrar sesión</a>
         <li class="nav-item">
           <a class="nav-link disabled" aria-disabled="true"></a>
@@ -47,24 +47,24 @@ $perfil=$session->get('perfil_id');?>
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
-    </div>
-    <!--CLIENTE logueado-->
+     </div>
+      <!--CLIENTE logueado-->
     <?php elseif(session()->perfil_id == 2): ?>
       <div class="btn btn-info active btnUser btn-sm">
         <a href="">CLIENTE: <?php echo session('nombre'); ?> </a>
-    </div>
+      </div>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href='Casa'>Home</a>
+          <a class="nav-link active" aria-current="page" href="<?php echo base_url('Casa');?>">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href='quienesSomos'>Quienes Somos</a>
+          <a class="nav-link" href="<?php echo base_url('quienesSomos');?>">Quienes Somos</a>
 
         </li>
         <li class="nav-item">
-          <a class="nav-link" href='Comercializacion'>Comercializacion</a>
+          <a class="nav-link" href="<?php echo base_url('Comercializacion');?>">Comercializacion</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href='Catalogo_productos'>Productos</a>
@@ -74,8 +74,8 @@ $perfil=$session->get('perfil_id');?>
             Mas
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href='Info_contact'>Informacion de contacto</a></li>
-            <li><a class="dropdown-item" href='Terminos_Uso'>Terminos de Uso</a></li>
+            <li><a class="dropdown-item" href="<?php echo base_url('Info_contact');?>">Informacion de contacto</a></li>
+            <li><a class="dropdown-item" href="<?php echo base_url('Terminos_Uso');?>">Terminos de Uso</a></li>
           </ul>
         </li>
         <a class="btn btn-danger btn-sm me-2" href="<?= base_url('logout'); ?>">Cerrar sesión</a>
@@ -93,27 +93,27 @@ $perfil=$session->get('perfil_id');?>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href='Casa'>Home</a>
+          <a class="nav-link active" aria-current="page" href="<?php echo base_url('Casa');?>">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href='quienesSomos'>Quienes Somos</a>
+          <a class="nav-link" href="<?php echo base_url('quienesSomos');?>">Quienes Somos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href='Comercializacion'>Comercializacion</a>
+          <a class="nav-link" href="<?php echo base_url('Comercializacion');?>">Comercializacion</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href='registro'>Registrarse</a>
+          <a class="nav-link" href="<?php echo base_url('registro');?>">Registrarse</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href='Login'>Iniciar Sesion</a>
+          <a class="nav-link" href= "<?php echo base_url('Login');?>" >Iniciar Sesion</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Mas
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href='Info_contact'>Informacion de contacto</a></li>
-            <li><a class="dropdown-item" href='Terminos_Uso'>Terminos de Uso</a></li>
+            <li><a class="dropdown-item" href="<?php echo base_url('Info_contact');?>">Informacion de contacto</a></li>
+            <li><a class="dropdown-item" href="<?php echo base_url('Terminos_Uso');?>">Terminos de Uso</a></li>
           </ul>
         </li>
       </ul>

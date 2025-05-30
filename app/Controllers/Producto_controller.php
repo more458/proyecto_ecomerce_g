@@ -86,12 +86,12 @@ class Productocontroller extends Controller
         'stock' => $this->request->getVar('stock'),
         'stock_min' => $this->request->getVar('stock_min'),
         //'eliminado' => NO
-    ];
+        ];
 
-    $producto = new Producto_Model();
-    $producto->insert($data);
-    session()->setFlashdata('success', 'Alta Exitosa...');
-    return $this->response->redirect(site_url('crear'));
+        $producto = new Producto_Model();
+        $producto->insert($data);
+        session()->setFlashdata('success', 'Alta Exitosa...');
+        return $this->response->redirect(site_url('crear'));
     }
 
     // Show single producto (mostrar un producto por id)

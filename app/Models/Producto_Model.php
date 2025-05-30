@@ -6,7 +6,7 @@ class Producto_Model extends Model {
     protected $table = 'products';
     protected $primaryKey = 'id';
     protected $allow@fields = ['nombre_prod', 'imagen', 'categoria_id', 'precio', 'precio_vta', 'stock', 'stock_min',
-    ', ''eliminado'];
+    'eliminado'];
 
     public function getBuilderProducts(){
         // conect() es un metodo de la clase Database, que nos permite conectar a la base de datos
