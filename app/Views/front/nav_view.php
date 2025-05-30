@@ -66,6 +66,9 @@ $perfil=$session->get('perfil_id');?>
         <li class="nav-item">
           <a class="nav-link" href='Comercializacion'>Comercializacion</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href='Catalogo_productos'>Productos</a>
+        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Mas
@@ -73,7 +76,6 @@ $perfil=$session->get('perfil_id');?>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href='Info_contact'>Informacion de contacto</a></li>
             <li><a class="dropdown-item" href='Terminos_Uso'>Terminos de Uso</a></li>
-            
           </ul>
         </li>
         <a class="btn btn-danger btn-sm me-2" href="<?= base_url('logout'); ?>">Cerrar sesión</a>

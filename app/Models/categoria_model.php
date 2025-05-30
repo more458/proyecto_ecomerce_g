@@ -9,26 +9,8 @@ class categoria_model extends Model
     protected $allowedFields = ['descripcion', 'activo'];
 
     
-    public function agregarCategoria($data)
+    public function getCategorias()
     {
-        return $this->insert($data);
-    }
-
-    
-    public function obtenerCategoria($id)
-    {
-        return $this->find($id);
-    }
-
-   
-    public function actualizarCategoria($id, $data)
-    {
-        return $this->update($id, $data);
-    }
-
-    
-    public function borrarCategoria($id)
-    {
-        return $this->delete($id);
+        return $this->findAll();
     }
 }

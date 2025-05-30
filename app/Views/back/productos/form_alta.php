@@ -1,3 +1,19 @@
+<label class="mt-2" for="age">Categoria</label>
+<select class="form-control" name="categoria" id="categoria" value="">
+    <option value="">Seleccionar Categoria</option>
+    <?php foreach ($categorias as $categoria) { ?>
+        <option value="<?php echo $categoria['id']; ?>">
+            <?php echo $categoria['id'], ". ", $categoria['descripcion']; } ?>
+        </option>
+    </div>
+    <?php if($validation->getError('categoria')) {?>
+        <div class='alert alert-danger mt-2'>
+            <?php $error = $validation->getError('categoria'); ?>
+            <?= $error ?>
+        </div>
+    <?php } ?>
+</select>
+
 <!--ACTUALIZACION 28/5/25-->
 <div class="container mt-1 mb-1 d-flex justify-content-center">
     <div class="card" style="width:75%;">
@@ -25,8 +41,8 @@
                 <div class="mb-2">
                     <label for="nombre_prod" class="form-label">Producto</label>
                     <input class="form-control" type="text" name="nombre_prod" id="nombre_prod" 
-                           value="<?= set_value('nombre_prod'); 
-                           ?>" placeholder="Nombre del producto" autofocus>
+                    value="<?= set_value('nombre_prod'); 
+                    ?>" placeholder="Nombre del producto" autofocus>
                     
                     <!-- Error -->
                     <?php if ($validation->getError('nombre_prod')): ?>

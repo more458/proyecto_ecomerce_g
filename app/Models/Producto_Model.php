@@ -2,33 +2,35 @@
 namespace App\Models;
 use CodeIgniter\Model;
 
-class Producto_Model extends Model
-{
-    protected $table = 'productos';
+class Producto_Model extends Model {
+    protected $table = 'products';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['nombre_prod', 'imagen', 'categoria_id', 'precio', 'precio_vta', 'stock', 'stok_min', 'eliminado'];
+    protected $allow@fields = ['nombre_prod', 'imagen', 'categoria_id', 'precio', 'precio_vta', 'stock', 'stock_min',
+    ', ''eliminado'];
 
-    // Método para agregar un usuario
-    public function agregarProducto($data)
-    {
-        return $this->insert($data);
+    public function getBuilderProducts(){
+        // conect() es un metodo de la clase Database, que nos permite conectar a la base de datos
+        $db = \Config\Database::consect();
+        // $builders es una instancia de la clase QueryBuilder de Codefigniter
+        $builder = $db->table('productos');
+        // hace una consulta a la base de datos
+        $builder->select('*');
+        // hago el join de la tabla categoria
+        $builder->join('categories', 'categories.id = productos.categoria_id');
+        // retorna el builder
+        return $builder;
     }
 
-    // Método para obtener datos de un usuario para editar (por id)
-    public function obtenerProducto($id)
-    {
-        return $this->find($id);
+    public function getProducts($id = null){
+        $builder = $this->getBuilderProducts();
+        $builder->where('productos.id', $id);
+        $query = $builder->get();
+        return $query->getRowArray();
     }
 
-    // Método para actualizar un usuario
-    public function actualizarProducto($id, $data)
-    {
-        return $this->update($id, $data);
+    public function updateStock($id = null, $stock_actual = null){
+        $builder = $this->getBuilderProducts();
+        $builder->where('productos.id', $id);
+        $builder->set('productos.stock', $stock_actual);
+        $builder->update();
     }
-
-    // Método para borrar un usuario
-    public function borrarProducto($id)
-    {
-        return $this->delete($id);
-    }
-}

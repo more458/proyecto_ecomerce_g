@@ -59,5 +59,13 @@ class Home extends BaseController
         echo view ('front/footer_view');
     }
 
-    
+    public function productos()
+    {
+        $tituloVar['titulo']='Catalogo de Productos';
+        echo view ('front/header_view',$tituloVar);
+        echo view ('front/nav_view');
+        echo view ('front/Catalogo_Productos');
+        echo view ('front/footer_view');
+    }
+
 }

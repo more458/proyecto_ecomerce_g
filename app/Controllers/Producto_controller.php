@@ -33,7 +33,7 @@ class Productocontroller extends Controller
         $data['categorias'] = $categoriasmodel->getCategorias(); // traer las categorias desde la db
 
         $productoModel = new Producto_Model();
-        $data['producto'] = $productoModel->getProductoAll();
+        $data['producto'] = $productoModel->orderBy('id', 'DESC')->findAll();
 
         $data['titulo']='Alta producto';
         echo view('front/head_view', $dato);
@@ -92,6 +92,100 @@ class Productocontroller extends Controller
     $producto->insert($data);
     session()->setFlashdata('success', 'Alta Exitosa...');
     return $this->response->redirect(site_url('crear'));
+    }
+
+    // Show single producto (mostrar un producto por id)
+    public function singleproducto($id = null){
+        $productoModel = new Producto_Model();
+        $data['old'] = $productoModel->where('id', $id)->first();
+        if (empty($data['old'])){
+            // Lanzar error
+            throw new \CodeIgniter\Exceptions\PageNotFoundException('No se seleccionado');
+        }
+        // Instancio el modelo de categorías
+        $categoríasN = new categoria_model();
+        $data['categorías'] = $categoríasN->getCategorías(); //traigo cate
+
+        $data['titulo']='Cruq_productos';
+        echo view('front/head_view', $data);
+        echo view('front/nav_view');
+        echo view('back/productos/edit', $data);
+        echo view('front/footer_view');
+    }
+
+
+
+    public function modified($id){
+        $productModel = new Producto_Model();
+        $prod = $productModel->where('id', $id)->first();
+        $img = $this->request->getFile('imagen');
+        
+        // Verifica si se cargó un archivo de imagen válido
+        if ($img && $img->isValid()) {
+            // Se cargó una imagen válida correctamente
+            $nombre_aleatorio = $img->getRandomName();
+            $img->move(ROOTPATH . 'assets/uploads', $nombre_aleatorio);
+
+            $data = [
+                'nombre_prod' => $this->request->getVar('nombre_prod'),
+                'imagen' => $nombre_aleatorio,
+                // Completar con los demás campos
+                'categoria_id' => $this->request->getVar('categoria'),
+                'precio' => $this->request->getVar('precio'),
+                'precio_vta' => $this->request->getVar('precio_vta'),
+                'stock' => $this->request->getVar('stock'),
+                'stock_min' => $this->request->getVar('stock_min'),
+                // eliminado -> NO;
+            ];
+        } else {
+            // No se cargó una nueva imagen, solo actualiza los datos del producto sin sobrescribir
+            $data = [
+                'nombre_prod' => $this->request->getVar('nombre_prod'),
+                // Completar con los demás campos
+                'categoria_id' => $this->request->getVar('categoria'),
+                'precio' => $this->request->getVar('precio'),
+                'precio_vta' => $this->request->getVar('precio_vta'),
+                'stock' => $this->request->getVar('stock'),
+                'stock_min' => $this->request->getVar('stock_min'),
+                // eliminado -> NO;
+            ];
+        }
+
+        $productModel->update($id, $data);
+        return redirect()->to('/productos');
+    }
+
+    //eliminar logicamente
+    public function deleteproducto($id)
+    {
+        $productoModel = new Producto_Model();
+        $data['eliminado'] = $productoModel->where('id', $id)->first();
+        $data['eliminado'] = 'SI';
+        $productoModel->update($id, $data);
+        return $this->response->redirect(site_url('crear'));
+    }
+
+    public function eliminados()
+    {
+        $productoModel = new Producto_Model();
+        $data['producto'] = $productoModel->getProductoAll();
+        //$data['producto'] = $productoModel->orderBy('id', 'DESC')->findAll();
+        $data['titulo']='Crud_products'; 
+        echo view('front/head_view_crud', $data); 
+        echo view('front/nav_view'); 
+        echo view('back/products/producto_eliminado', $data); 
+        echo view('front/footer_view');
+    }
+
+    public function activarproducto($id)
+    {
+        $productoModel = new Producto_Model();
+        $data['eliminado'] = $productoModel->where('id', $id)->first();
+        $data['eliminado'] = 'NO';
+        $productoModel->update($id, $data);
+        session()->setFlashdata('success', 'Activacion Exitosa...');
+        return $this->response->redirect(site_url('/crear'));
+        // return $this->response->redirect(site_url('crear'));
     }
 
 }
