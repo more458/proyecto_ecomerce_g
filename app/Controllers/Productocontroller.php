@@ -22,7 +22,7 @@ class Productocontroller extends Controller
         $data['productos'] = $productoModel->getProductoAll(); //funcion en el modelo
 
         $dato['titulo']='Crud_productos';
-        echo view('front/header_view', $dato);
+        echo view('front/header_view', $dato); 
         echo view('front/nav_view');
         echo view('back/productos/producto_nuevo_view', $data); 
         echo view('front/footer_view');
@@ -168,12 +168,12 @@ class Productocontroller extends Controller
     public function eliminados()
     {
         $productoModel = new Producto_Model();
-        $data['producto'] = $productoModel->getProductoAll();
-        //$data['producto'] = $productoModel->orderBy('id', 'DESC')->findAll();
+        $data['productosElim'] = $productoModel->getProductoElimAll();
+        //$data['productosElim'] = $productoModel->orderBy('id', 'DESC')->findAll();
         $data['titulo']='Crud_products'; 
-        echo view('front/header_view_crud', $data); 
+        echo view('front/header_view', $data); 
         echo view('front/nav_view'); 
-        echo view('back/products/producto_eliminado', $data); 
+        echo view('back/productos/producto_eliminado', $data); 
         echo view('front/footer_view');
     }
 

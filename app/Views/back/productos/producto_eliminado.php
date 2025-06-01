@@ -1,13 +1,10 @@
-
 <div class="container mt-4">
     <div class="d-flex justify-content-between mb-3">
         <div>
-            <a href="<?php echo base_url('form_alta');?>" class="btn btn-success">Agregar</a>
-            <a href="<?= base_url('eliminados') ?>" class="btn btn-danger">Eliminados</a>
+            <a href="<?php echo base_url('crear');?>" class="btn btn-success">Volver</a>
         </div>
         <input type="text" class="form-control w-25" placeholder="Search..." id="searchInput">
     </div>
-
     <table class="table table-bordered table-striped text-center">
         <thead class="thead-light">
             <tr>
@@ -21,9 +18,9 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($productos as $producto): ?>
+            <?php foreach ($productosElim as $producto): ?>
                 <tr>
-                    <td><?= $producto->producto_id  ?></td><!-- se le pasa el ide del producto pero mustra el ide de la categoria corregir -->
+                    <td><?= $producto->producto_id ?></td><!-- se le pasa el ide del producto pero mustra el ide de la categoria corregir -->
                     <td><?= $producto->nombre_prod ?></td>
                     <td><?= number_format($producto->precio, 2) ?></td>
                     <td><?= number_format($producto->precio_vta, 2) ?></td>
@@ -32,8 +29,7 @@
                         <img src="<?= base_url('assets/uploads/' . $producto->imagen) ?>" width="60" height="60">
                     </td>
                     <td>
-                        <a href="<?= site_url('editar/' . $producto->producto_id ) ?>" class="btn btn-primary btn-sm">Editar</a>
-                        <a href="<?= site_url('borrar/' . $producto->producto_id ) ?>" class="btn btn-secondary btn-sm">Borrar</a>
+                        <a href="<?= site_url('activar_pro/' . $producto->producto_id ) ?>" class="btn btn-secondary btn-sm">Activar</a>
                     </td>
                 </tr>
             <?php endforeach; ?>

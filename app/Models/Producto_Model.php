@@ -13,7 +13,18 @@ class Producto_Model extends Model {
         // $builders es una instancia de la clase QueryBuilder de Codefigniter
         $builder = $db->table('productos');
         // hace una consulta a la base de datos
-        $builder->select('*');
+        //$builder->select('*');
+        $builder->select(
+            'productos.id AS producto_id,
+            productos.nombre_prod,
+            productos.imagen,
+            productos.precio,
+            productos.precio_vta,
+            productos.stock,
+            productos.stock_min,
+            productos.eliminado,
+            categorias.descripcion AS categoria_descripcion'
+        );
         // hago el join de la tabla categoria
         $builder->join('categorias', 'categorias.id = productos.categoria_id');
         // retorna el builder
@@ -21,11 +32,35 @@ class Producto_Model extends Model {
     }
 
     public function getProductoAll($id = null){
-     /*   $builder = $this->getBuilderProductos();
+    /*   $builder = $this->getBuilderProductos();
         $builder->where('productos.id', $id);
         $query = $builder->get();
         return $query->getRowArray();*/
         $builder = $this->getBuilderProductos();
+        $builder->where('eliminado', 'NO');
+
+        if ($id !== null) {
+            $builder->where('productos.id', $id);
+            $query = $builder->get();
+            return $query->getRowArray(); // uno solo
+        } else {
+            $query = $builder->get();
+            return $query->getResult(); // muchos productos
+            
+        }
+    }
+
+    public function updateStock($id = null, $stock_actual = null){
+        $builder = $this->getBuilderProductos();
+        $builder->where('productos.id', $id);
+        $builder->set('productos.stock', $stock_actual);
+        $builder->update();
+    }
+
+    //este metodo esta creado por tu servidor
+    public function getProductoElimAll($id = null) {
+    $builder = $this->getBuilderProductos();
+    $builder->where('eliminado', 'SI'); // Filtra solo productos eliminados
 
         if ($id !== null) {
             $builder->where('productos.id', $id);
@@ -35,12 +70,5 @@ class Producto_Model extends Model {
             $query = $builder->get();
             return $query->getResult(); // muchos productos
         }
-    }
-
-    public function updateStock($id = null, $stock_actual = null){
-        $builder = $this->getBuilderProductos();
-        $builder->where('productos.id', $id);
-        $builder->set('productos.stock', $stock_actual);
-        $builder->update();
     }
 }
