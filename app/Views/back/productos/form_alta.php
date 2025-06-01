@@ -1,18 +1,5 @@
-<label class="mt-2" for="age">Categoria</label>
-<select class="form-control" name="categoria" id="categoria" value="">
-    <option value="">Seleccionar Categoria</option>
-    <?php foreach ($categorias as $categoria) { ?>
-        <option value="<?php echo $categoria['id']; ?>">
-            <?php echo $categoria['id'], ". ", $categoria['descripcion']; } ?>
-        </option>
-    </div>
-    <?php if($validation->getError('categoria')) {?>
-        <div class='alert alert-danger mt-2'>
-            <?php $error = $validation->getError('categoria'); ?>
-            <?= $error ?>
-        </div>
-    <?php } ?>
-</select>
+
+    
 
 <!--ACTUALIZACION 28/5/25-->
 <div class="container mt-1 mb-1 d-flex justify-content-center">
@@ -51,22 +38,23 @@
                         </div>
                     <?php endif; ?>
                 </div>
-
-                <div class="mb-2">
-                    <select class="form-control" name="categoria" id="categoria">
-                        <option value="0">Seleccionar Categoría</option>
-                        <?php foreach ($categorias as $categoria): ?>
-                            <option value="<?= $categoria['id']; ?>" <?= set_select('categoria', $categoria['id']); ?>>
-                                <?= $categoria['id'] . ', ' . $categoria['descripcion']; ?>
+                <div>
+                    <label class="mt-2" for="age">Categoria</label>
+                    <select class="form-control" name="categoria_id" id="categoria" value="">
+                        <option value="">Seleccionar Categoria</option>
+                        <?php foreach ($categorias as $categoria) { ?>
+                            <option value="<?php echo $categoria['id']; ?>">
+                                <?php echo $categoria['id'], ". ", $categoria['descripcion']; } ?>
                             </option>
-                        <?php endforeach; ?>
-                    </select>
-                    <!--SEGUNDA PARTE-->
-                    <?php if ($validation->getError('categoria')): ?>
-                        <div class="alert alert-danger mt-2">
-                            <?= $validation->getError('categoria'); ?>
                         </div>
-                    <?php endif; ?>
+                        <!--SEGUNDA PARTE-->
+                        <?php if($validation->getError('categoria')) {?>
+                            <div class='alert alert-danger mt-2'>
+                                <?php $error = $validation->getError('categoria'); ?>
+                                <?= $error ?>
+                            </div>
+                        <?php } ?>
+                        </select>
                 
                 <div class="mb-2">
                     <label for="precio" class="form-label">Precio de Costo</label>

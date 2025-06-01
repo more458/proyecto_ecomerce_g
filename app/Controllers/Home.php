@@ -64,17 +64,17 @@ class Home extends BaseController
         $tituloVar['titulo']='Catalogo de Productos';
         echo view ('front/header_view',$tituloVar);
         echo view ('front/nav_view');
-        echo view ('front/Catalogo_Productos');
+        echo view ('back/productos/Catalogo_Productos');
         echo view ('front/footer_view');
     }
 
-    public function alta_productos()
+    /*public function alta_productos()
     {
         $tituloVar['titulo']='Alta de Profuctos';
         echo view ('front/header_view',$tituloVar);
         echo view ('front/nav_view');
         echo view ('back/producto/form_alta');
         echo view ('front/footer_view');
-    }
+    }*/
 
 }

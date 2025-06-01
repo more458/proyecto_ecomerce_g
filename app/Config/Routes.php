@@ -12,7 +12,7 @@ $routes->get('Comercializacion', 'Home::Comercializacion');
 $routes->get('Info_contact', 'Home::Contact');
 $routes->get('Terminos_Uso', 'Home::terminosUso');
 $routes->get('Catalogo_productos', 'Home::productos');
-$routes->get('form_alta', 'Home::alta_productos');
+//$routes->get('form_alta', 'Home::alta_productos');
 
 /*rutas del registro de usuario*/
 $routes->get('registro', 'Usuario_controller::create');
@@ -27,10 +27,10 @@ $routes->get('/panel', 'panel_controller::index', ['filter' => 'auth']);//nose p
 $routes->get('/logout', 'Login_controller::logout');
 
 /*Rutas de Productos*/
-$routes->get('/crear', 'Productocontroller::index',['filter' => 'auth']);
-$routes->get('/agregar', 'Productocontroller::index',['filter' => 'auth']);
-$routes->get('/produ-form', 'Productocontroller::creaproducto',['filter' => 'auth']);
-$routes->post('/enviar-prod', 'Productocontroller::store',['filter' => 'auth']);
+$routes->get('crear', 'Productocontroller::index',['filter' => 'auth']);
+$routes->get('/agregar', 'Productocontroller::index',['filter' => 'auth']);//me parece que es lo mismo q crear
+$routes->get('form_alta', 'Productocontroller::creaproducto',['filter' => 'auth']);
+$routes->post('enviar-prod', 'Productocontroller::store',['filter' => 'auth']);
 $routes->get('/editar/(:num)', 'Productocontroller::singleproducto/$1',['filter' => 'auth']);
 $routes->post('/modifica/(:num)', 'Productocontroller::modifica/$1',['filter' => 'auth']);
 $routes->get('/borrar/(:num)', 'Productocontroller::deleteproducto/$1');

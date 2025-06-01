@@ -26,8 +26,9 @@ $perfil=$session->get('perfil_id');?>
 
         </li>
         <li class="nav-item">
-          <a class="nav-link" href='#'>CRUD Productos</a>
+          <a class="nav-link" href="<?php echo base_url('crear');?>">CRUD Productos</a>
         </li>
+
         <!--<li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Mas
