@@ -7,6 +7,8 @@ class Producto_Model extends Model {
     protected $primaryKey = 'id';
     protected $allowedFields = ['nombre_prod', 'imagen', 'categoria_id', 'precio', 'precio_vta', 'stock', 'stock_min', 'eliminado'];
 
+    protected $returnType = 'object'; // Asegura que los resultados sean objetos
+
     public function getBuilderProductos(){
         // conect() es un metodo de la clase Database, que nos permite conectar a la base de datos
         $db = \Config\Database::connect();
@@ -42,13 +44,24 @@ class Producto_Model extends Model {
         if ($id !== null) {
             $builder->where('productos.id', $id);
             $query = $builder->get();
-            return $query->getRowArray(); // uno solo
+            return $query->getRow(); // uno solo
         } else {
             $query = $builder->get();
             return $query->getResult(); // muchos productos
             
         }
     }
+
+    // --- NUEVO MÉTODO PARA EL CARRITO ---
+    public function getProductoById($id)
+    {
+        $builder = $this->getBuilderProductos();
+        $builder->where('productos.id', $id);
+        $builder->where('productos.eliminado', 'NO'); // Asegura que el producto no esté eliminado
+        $query = $builder->get();
+        return $query->getRow(); // Devolvemos un solo objeto
+    }
+    // --- FIN NUEVO MÉTODO ---
 
     public function updateStock($id = null, $stock_actual = null){
         $builder = $this->getBuilderProductos();
@@ -65,7 +78,7 @@ class Producto_Model extends Model {
         if ($id !== null) {
             $builder->where('productos.id', $id);
             $query = $builder->get();
-            return $query->getRowArray(); // uno solo
+            return $query->getRow(); // uno solo
         } else {
             $query = $builder->get();
             return $query->getResult(); // muchos productos

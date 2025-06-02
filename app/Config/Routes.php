@@ -40,4 +40,11 @@ $routes->get('activar_pro/(:num)', 'Productocontroller::activarproducto/$1',['fi
 
 $routes->get('vista_compras/(:num)', 'Ventascontroller::ver_factura/$1', ['filter' => 'auth']);
 
+/*RUTAS DEL CARRITO*/
 
+$routes->get('carrito', 'CarritoController::index');
+$routes->post('carrito/agregar', 'CarritoController::agregar');
+$routes->post('carrito/actualizar', 'CarritoController::actualizar'); // Usamos POST para actualizar
+$routes->get('carrito/eliminar/(:num)', 'CarritoController::eliminar/$1');
+$routes->get('carrito/vaciar', 'CarritoController::vaciar');
+$routes->get('carrito/checkout', 'CarritoController::checkout');

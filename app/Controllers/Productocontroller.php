@@ -1,9 +1,9 @@
 <?php
 namespace App\Controllers;
 use App\Models\Producto_Model;
-use App\Models\Usuarios_Model;
-use App\Models\Ventas_cabecera_model;
-use App\Models\Ventas_detalle_model;
+use App\Models\Usuarios_Model; // Asegúrate de que estos modelos existan y sean necesarios
+use App\Models\Ventas_cabecera_model; // Asegúrate de que estos modelos existan y sean necesarios
+use App\Models\Ventas_detalle_model; // Asegúrate de que estos modelos existan y sean necesarios
 use App\Models\categoria_model;
 use CodeIgniter\Controller;
 
@@ -11,20 +11,19 @@ class Productocontroller extends Controller
 {
     public function __construct(){
         helper(['url', 'form']);
-        $session=session();
+        // service('session'); // CodeIgniter suele cargar la sesión automáticamente, pero si tienes problemas, puedes descomentar esto.
     }
 
     // mostrar los productos en lista
     public function index()
     {
         $productoModel = new Producto_Model();
-        // realizo la consulta para mostrar todos los productos
-        $data['productos'] = $productoModel->getProductoAll(); //funcion en el modelo
+        $data['productos'] = $productoModel->getProductoAll();
 
         $dato['titulo']='Crud_productos';
-        echo view('front/header_view', $dato); 
+        echo view('front/header_view', $dato);
         echo view('front/nav_view');
-        echo view('back/productos/producto_nuevo_view', $data); 
+        echo view('back/productos/producto_nuevo_view', $data);
         echo view('front/footer_view');
     }
 
@@ -32,8 +31,9 @@ class Productocontroller extends Controller
         $categoriasmodel = new categoria_model();
         $data['categorias'] = $categoriasmodel->getCategorias(); // traer las categorias desde la db
 
-        $productoModel = new Producto_Model();
-        $data['productos'] = $productoModel->orderBy('id', 'DESC')->findAll();
+        // No es necesario cargar todos los productos aquí, a menos que tu form_alta también los muestre.
+        // $productoModel = new Producto_Model();
+        // $data['productos'] = $productoModel->orderBy('id', 'DESC')->findAll();
 
         $dato['titulo']='Alta producto';
         echo view('front/header_view', $dato);
@@ -42,150 +42,177 @@ class Productocontroller extends Controller
         echo view('front/footer_view');
     }
 
-
     public function store() {
-    // construimos las reglas de validación
-    $input = $this->validate([
-        'nombre_prod' => 'required|min_length[3]',
-        'categoria' => 'is_not_unique[categorias.id]',
-        'precio' => 'required|numeric',
-        'precio_vta' => 'required|numeric',
-        'stock' => 'required',
-        'stock_min' => 'required',
-        'imagen' => 'uploaded[imagen]'
-    ]);
+        // Construimos las reglas de validación
+        $input = $this->validate([
+            'nombre_prod' => 'required|min_length[3]',
+            'categoria_id' => 'required|is_not_unique[categorias.id]', // CAMBIO: Usar 'categoria_id' si es el name del select, y 'required'
+            'precio' => 'required|numeric',
+            'precio_vta' => 'required|numeric',
+            'stock' => 'required|integer', // CAMBIO: 'integer' para stock
+            'stock_min' => 'required|integer', // CAMBIO: 'integer' para stock_min
+            'imagen' => 'uploaded[imagen]|max_size[imagen,2048]|is_image[imagen]|mime_in[imagen,image/jpg,image/jpeg,image/png]' // CAMBIO: Añadido max_size, is_image, mime_in
+        ]);
 
-    $productoModel = new Producto_Model(); // se instancia el modelo
+        $productoModel = new Producto_Model(); // se instancia el modelo
 
-    if (!$input) {
-        $categoria_model = new categoria_model();
-        $data['categorias'] = $categoria_model->getCategorias();
-        $data['validation'] = $this->validator;
+        if (!$input) {
+            $categoria_model = new categoria_model();
+            $data['categorias'] = $categoria_model->getCategorias();
+            $data['validation'] = $this->validator; // Pasa el objeto validador a la vista
 
-        $dato['titulo'] = 'Alta';
-        echo view('front/header_view', $dato);
-        echo view('front/nav_view');
-        echo view('back/productos/form_alta', $data);
+            $dato['titulo'] = 'Alta producto'; // CAMBIO: Título consistente
+            echo view('front/header_view', $dato);
+            echo view('front/nav_view');
+            echo view('back/productos/form_alta', $data);
+            echo view('front/footer_view');
+            return; // Importante: Detener la ejecución aquí si la validación falla
+        }
 
-    }
+        $img = $this->request->getFile('imagen');
+        $nombre_aleatorio = $img->getRandomName();
+        // CAMBIO: Usar FCPATH para la ruta del directorio público
+        $img->move(FCPATH . 'assets/img/productos', $nombre_aleatorio); // CAMBIO: Mover a la carpeta de imágenes de productos
 
-    $img = $this->request->getFile('imagen');
-    //este código genera un nombre aleatorio para el archivo
-    $nombre_aleatorio = $img->getRandomName();
-    //mueve el archivo de imagen a una ubicación específica en el servidor metodo move(). en carpeta assets/uploads
-    $img->move(ROOTPATH.'assets/uploads', $nombre_aleatorio);
-
-    $data = [
-        'nombre_prod' => $this->request->getVar('nombre_prod'),
-        //Aquí se obtiene el nombre del archivo de imagen (sin la ruta) utilizando el metodo getName() del objeto &img
-        'imagen' => $img->getName(),
-        // completar con los demás campos
-        'categoria_id' => $this->request->getVar('categoria_id'),
-        'precio' => $this->request->getVar('precio'),
-        'precio_vta' => $this->request->getVar('precio_vta'),
-        'stock' => $this->request->getVar('stock'),
-        'stock_min' => $this->request->getVar('stock_min'),
-        //'eliminado' => NO
+        $data = [
+            'nombre_prod' => $this->request->getVar('nombre_prod'),
+            'imagen' => $nombre_aleatorio, // CAMBIO: Guardar el nombre_aleatorio, no $img->getName() que podría ser el original
+            'categoria_id' => $this->request->getVar('categoria_id'), // CAMBIO: Usar 'categoria_id'
+            'precio' => $this->request->getVar('precio'),
+            'precio_vta' => $this->request->getVar('precio_vta'),
+            'stock' => $this->request->getVar('stock'),
+            'stock_min' => $this->request->getVar('stock_min'),
+            'eliminado' => 'NO', // CAMBIO: Asegúrate de que se inserte como 'NO' por defecto
         ];
 
-        $producto = new Producto_Model();
-        $producto->insert($data);
-        session()->setFlashdata('success', 'Alta Exitosa...');
-        return $this->response->redirect(site_url('crear'));
+        $productoModel->insert($data); // CAMBIO: Usa el mismo modelo instanciado arriba
+        session()->setFlashdata('success', 'Producto dado de alta exitosamente.'); // CAMBIO: Mensaje más específico
+        return $this->response->redirect(site_url('productos')); // CAMBIO: Redirigir a la lista de productos
     }
 
-    // Show single producto (mostrar un producto por id)
+    // Muestra el formulario para editar un solo producto
     public function singleproducto($id = null){
         $productoModel = new Producto_Model();
-        $data['old'] = $productoModel->where('id', $id)->first();
-        if (empty($data['old'])){
-            // Lanzar error
-            throw new \CodeIgniter\Exceptions\PageNotFoundException('No se seleccionado');
-        }
-        // Instancio el modelo de categorías
-        $categoríasN = new categoria_model();
-        $data['categorías'] = $categoríasN->getCategorías(); //traigo cate
+        // Usamos getProductoById para asegurarnos de que cargamos un objeto con el alias 'producto_id'
+        $data['old'] = $productoModel->getProductoById($id);
 
-        $data['titulo']='Cruq_productos';
+        if (empty($data['old'])){
+            // Lanzar una excepción de página no encontrada es una buena práctica
+            throw new \CodeIgniter\Exceptions\PageNotFoundException('No se ha seleccionado un producto para editar.');
+        }
+
+        // Instancio el modelo de categorías
+        $categoriasModel = new categoria_model(); // CAMBIO: Nombre de variable más claro
+        $data['categorias'] = $categoriasModel->getCategorias(); // Traigo las categorías desde la DB
+
+        $data['titulo']='Editar Producto'; // CAMBIO: Título más apropiado para la vista de edición
         echo view('front/header_view', $data);
         echo view('front/nav_view');
-        echo view('back/productos/edit', $data);
+        echo view('back/productos/edit', $data); // Carga la vista de edición
         echo view('front/footer_view');
     }
 
-
-
+    // Procesa el formulario de edición y actualiza el producto
     public function modified($id){
-        $productModel = new Producto_Model();
-        $prod = $productModel->where('id', $id)->first();
-        $img = $this->request->getFile('imagen');
-        
-        // Verifica si se cargó un archivo de imagen válido
-        if ($img && $img->isValid()) {
-            // Se cargó una imagen válida correctamente
-            $nombre_aleatorio = $img->getRandomName();
-            $img->move(ROOTPATH . 'assets/uploads', $nombre_aleatorio);
+        $productoModel = new Producto_Model();
+        // Obtener el producto actual de la BD para validaciones y eliminar la imagen antigua
+        $prod = $productoModel->getProductoById($id); // Usamos getProductoById para consistencia
 
-            $data = [
-                'nombre_prod' => $this->request->getVar('nombre_prod'),
-                'imagen' => $nombre_aleatorio,
-                // Completar con los demás campos
-                'categoria_id' => $this->request->getVar('categoria'),
-                'precio' => $this->request->getVar('precio'),
-                'precio_vta' => $this->request->getVar('precio_vta'),
-                'stock' => $this->request->getVar('stock'),
-                'stock_min' => $this->request->getVar('stock_min'),
-                // eliminado -> NO;
-            ];
-        } else {
-            // No se cargó una nueva imagen, solo actualiza los datos del producto sin sobrescribir
-            $data = [
-                'nombre_prod' => $this->request->getVar('nombre_prod'),
-                // Completar con los demás campos
-                'categoria_id' => $this->request->getVar('categoria'),
-                'precio' => $this->request->getVar('precio'),
-                'precio_vta' => $this->request->getVar('precio_vta'),
-                'stock' => $this->request->getVar('stock'),
-                'stock_min' => $this->request->getVar('stock_min'),
-                // eliminado -> NO;
-            ];
+        if (empty($prod)) {
+            session()->setFlashdata('error', 'Producto no encontrado para editar.');
+            return redirect()->to(base_url('productos'));
         }
 
-        $productModel->update($id, $data);
-        return redirect()->to('/productos');
+        // Validación de los datos del formulario
+        $input = $this->validate([
+            'nombre_prod' => 'required|min_length[3]',
+            'categoria_id' => 'required|is_not_unique[categorias.id]', // CAMBIO: 'categoria_id' y 'required'
+            'precio' => 'required|numeric',
+            'precio_vta' => 'required|numeric',
+            'stock' => 'required|integer',
+            'stock_min' => 'required|integer',
+            'imagen' => 'max_size[imagen,2048]|is_image[imagen]|mime_in[imagen,image/jpg,image/jpeg,image/png]' // Opcional para editar: imagen no es 'uploaded'
+        ]);
+
+        if (!$input) {
+            // Si la validación falla, recarga el formulario con los errores y los datos antiguos
+            $categoriasModel = new categoria_model();
+            $data['categorias'] = $categoriasModel->getCategorias();
+            $data['old'] = $prod; // Pasamos los datos del producto original
+            $data['validation'] = $this->validator; // Pasa el objeto validador
+            $data['titulo'] = 'Editar Producto';
+
+            echo view('front/header_view', $data);
+            echo view('front/nav_view');
+            echo view('back/productos/edit', $data); // Vuelve a cargar la vista de edición con errores
+            echo view('front/footer_view');
+            return; // Detiene la ejecución aquí
+        }
+
+        $dataToUpdate = [ // Usamos un array de datos para la actualización
+            'nombre_prod' => $this->request->getVar('nombre_prod'),
+            'categoria_id' => $this->request->getVar('categoria_id'), // CAMBIO: Usar 'categoria_id'
+            'precio' => $this->request->getVar('precio'),
+            'precio_vta' => $this->request->getVar('precio_vta'),
+            'stock' => $this->request->getVar('stock'),
+            'stock_min' => $this->request->getVar('stock_min'),
+            // 'eliminado' se maneja por separado en deleteproducto/activarproducto
+        ];
+
+        $img = $this->request->getFile('imagen');
+
+        // Verifica si se cargó un archivo de imagen válido y si no es un error de carga
+        if ($img && $img->isValid() && !$img->hasMoved()) {
+            // CAMBIO: Borrar la imagen anterior si existe y no es la imagen por defecto
+            $oldImagePath = FCPATH . 'assets/img/productos/producto_' . $prod->producto_id . '.jpg';
+            // CAMBIO: Asegúrate de que 'default.jpg' sea el nombre de tu imagen por defecto y no se borre
+            if (file_exists($oldImagePath) && basename($oldImagePath) !== 'default.jpg') {
+                unlink($oldImagePath); // Elimina el archivo físico de la imagen anterior
+            }
+
+            // Mueve la nueva imagen con el ID del producto como nombre
+            $newImageName = 'producto_' . $id . '.jpg'; // CAMBIO: Nombra la imagen con el ID del producto
+            $img->move(FCPATH . 'assets/img/productos', $newImageName);
+            $dataToUpdate['imagen'] = $newImageName; // Actualiza el campo 'imagen' con el nuevo nombre
+        }
+        // Si no se cargó una nueva imagen, 'imagen' no se incluirá en $dataToUpdate, manteniendo la existente en la BD.
+
+        $productoModel->update($id, $dataToUpdate); // Actualiza el producto en la base de datos
+        session()->setFlashdata('success', 'Producto actualizado exitosamente.');
+        return redirect()->to(base_url('productos')); // Redirige a la lista de productos
     }
 
     //eliminar logicamente
     public function deleteproducto($id)
     {
         $productoModel = new Producto_Model();
-        $data['eliminado'] = $productoModel->where('id', $id)->first();
-        $data['eliminado'] = 'SI';
+        // CAMBIO: Solo necesitamos actualizar el campo 'eliminado', no recuperar todo el objeto si no es necesario
+        $data = ['eliminado' => 'SI']; // Array directamente con el campo a actualizar
         $productoModel->update($id, $data);
-        return $this->response->redirect(site_url('crear'));
+        session()->setFlashdata('success', 'Producto eliminado lógicamente.'); // Mensaje de éxito
+        return $this->response->redirect(site_url('productos')); // Redirigir a la lista de productos
     }
 
     public function eliminados()
     {
         $productoModel = new Producto_Model();
         $data['productosElim'] = $productoModel->getProductoElimAll();
-        //$data['productosElim'] = $productoModel->orderBy('id', 'DESC')->findAll();
-        $data['titulo']='Crud_products'; 
-        echo view('front/header_view', $data); 
-        echo view('front/nav_view'); 
-        echo view('back/productos/producto_eliminado', $data); 
+
+        $data['titulo']='Productos Eliminados'; // CAMBIO: Título más descriptivo
+        echo view('front/header_view', $data);
+        echo view('front/nav_view');
+        echo view('back/productos/producto_eliminado', $data);
         echo view('front/footer_view');
     }
 
     public function activarproducto($id)
     {
         $productoModel = new Producto_Model();
-        $data['eliminado'] = $productoModel->where('id', $id)->first();
-        $data['eliminado'] = 'NO';
+        // CAMBIO: Solo necesitamos actualizar el campo 'eliminado'
+        $data = ['eliminado' => 'NO']; // Array directamente con el campo a actualizar
         $productoModel->update($id, $data);
-        session()->setFlashdata('success', 'Activacion Exitosa...');
-        return $this->response->redirect(site_url('/crear'));
-        // return $this->response->redirect(site_url('crear'));
+        session()->setFlashdata('success', 'Producto activado exitosamente.');
+        return $this->response->redirect(site_url('productos')); // CAMBIO: Redirigir a la lista de productos activos
     }
 
 }

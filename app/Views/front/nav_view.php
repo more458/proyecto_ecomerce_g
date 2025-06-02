@@ -70,6 +70,22 @@ $perfil=$session->get('perfil_id');?>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href='Catalogo_productos'>Productos</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?php echo base_url('carrito');?>">
+              <i class="fas fa-shopping-cart"></i>
+              <?php if(session()->has('cart') && count(session('cart')) > 0): ?>
+                  <span class="badge bg-danger">
+                      <?php 
+                      $count = 0;
+                      foreach(session('cart') as $item) {
+                          $count += $item['quantity'];
+                      }
+                      echo $count;
+                      ?>
+                  </span>
+              <?php endif; ?>
+          </a>
+        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Mas
