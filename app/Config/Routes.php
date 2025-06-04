@@ -40,6 +40,8 @@ $routes->get('activar_pro/(:num)', 'Productocontroller::activarproducto/$1',['fi
 
 $routes->get('vista_compras/(:num)', 'Ventascontroller::ver_factura/$1', ['filter' => 'auth']);
 
+$routes->get('catalogo', 'Productocontroller::MostrarCatalogo',['filter' => 'auth']);
+
 /*RUTAS DEL CARRITO*/
 
 $routes->get('carrito', 'CarritoController::index');

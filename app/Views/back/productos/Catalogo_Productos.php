@@ -14,7 +14,7 @@
     <?php endif; ?>
 
     <div class="row">
-        <?php foreach ($productos as $producto): ?>
+        <?php foreach ($productosCat as $producto): ?>
         <div class="col-md-4 mb-4">
             <div class="card h-100 shadow-sm">
                 <?php

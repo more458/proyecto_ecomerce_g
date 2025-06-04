@@ -68,7 +68,7 @@ $perfil=$session->get('perfil_id');?>
           <a class="nav-link" href="<?php echo base_url('Comercializacion');?>">Comercializacion</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href='Catalogo_productos'>Productos</a>
+          <a class="nav-link active" aria-current="page" href="<?php echo base_url('catalogo');?>">Productos</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="<?php echo base_url('carrito');?>">

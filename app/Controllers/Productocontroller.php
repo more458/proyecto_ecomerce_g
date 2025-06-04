@@ -87,7 +87,7 @@ class Productocontroller extends Controller
 
         $productoModel->insert($data); // CAMBIO: Usa el mismo modelo instanciado arriba
         session()->setFlashdata('success', 'Producto dado de alta exitosamente.'); // CAMBIO: Mensaje más específico
-        return $this->response->redirect(site_url('productos')); // CAMBIO: Redirigir a la lista de productos
+        return $this->response->redirect(site_url('crear')); // CAMBIO: Redirigir a la lista de productos
     }
 
     // Muestra el formulario para editar un solo producto
@@ -213,6 +213,18 @@ class Productocontroller extends Controller
         $productoModel->update($id, $data);
         session()->setFlashdata('success', 'Producto activado exitosamente.');
         return $this->response->redirect(site_url('productos')); // CAMBIO: Redirigir a la lista de productos activos
+    }
+
+    public function MostrarCatalogo()
+    {
+        $productoModel = new Producto_Model();
+        $data['productosCat'] = $productoModel->getProductoAll();
+
+        $dato['titulo']='Crud_productos';
+        echo view('front/header_view', $dato);
+        echo view('front/nav_view');
+        echo view('back/productos/Catalogo_Productos', $data);
+        echo view('front/footer_view');
     }
 
 }
