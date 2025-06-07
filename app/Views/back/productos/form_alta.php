@@ -23,7 +23,7 @@
         <?php $validation = \Config\Services::validation(); ?>
 
         <!-- Inicio del formulario -->
-        <form action="<?= base_url('/enviar-prod'); ?>" method="post" enctype="multipart/form-data">
+        <form action="<?= base_url('enviar-prod'); ?>" method="post" enctype="multipart/form-data">
             <div class="card-body" media="(max-width:568px)">
                 <div class="mb-2">
                     <label for="nombre_prod" class="form-label">Producto</label>

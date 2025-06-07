@@ -6,13 +6,13 @@ use App\Models\Usuarios_model;
 use App\Models\Ventas_cabecera_model;
 use App\Models\Ventas_detalle_model;
 
-class Ventascontroller extends Controller{
+class Ventas_controller extends Controller{
 
     public function registrar_venta()
     {
         $session = session();
-        require(APPPATH . 'Controllers/carrito_controller.php');
-        $cartController = new carrito_controller(); //instancia
+        require(APPPATH . 'Controllers/CarritoController.php');
+        $cartController = new CarritoController(); //instancia
         $carrito_contents = $cartController->devolver_carrito();
 
         $productModel = new Producto_model();
@@ -25,15 +25,15 @@ class Ventascontroller extends Controller{
 
         // Validar stock y filtrar productos válidos
         foreach ($carrito_contents as $item) {
-            $producto = $productModel->getProducto($item['id']);
+            $producto = $productModel->getProductoById($item['producto_id']);
         
-            if ($producto && $producto['stock'] >= $item['qty']) {
+            if ($producto && $producto->stock >= $item['quantity']) {
                 $productos_validos[] = $item;
-                $total += $item['subtotal'];
+                $total += $item['precio_vta'];
             } else {
-                $productos_sin_stock[] = $item['name'];
+                $productos_sin_stock[] = $item['nombre_prod'];
                 // Eliminar del carrito el producto sin stock
-                $cartController->eliminar_item($item['rowid']);
+                $cartController->eliminar_item($item['producto_id']);
             }
         }
 
@@ -42,25 +42,41 @@ class Ventascontroller extends Controller{
             $mensaje = 'Los siguientes productos no tienen stock suficiente y fueron eliminados del carrito: <br>'
                 . implode(', ', $productos_sin_stock);
             $session->setFlashdata('mensaje', $mensaje);
-            return redirect()->to(base_url('muestro'));
+            return redirect()->to(base_url('carrito'));
         }
 
+
+
+
+
+        //aca hay un error
+        
         // Si no hay productos válidos, no se registra la venta
         if (empty($productos_validos)) {
             $session->setFlashdata('mensaje', 'No hay productos válidos para registrar la venta.');
-            return redirect()->to(base_url('muestro'));
+            return redirect()->to(base_url('Casa'));
         }
+
+
+
+
+
+
+
+
+
+
         // Validar stock y filtrar productos válidos
         foreach ($carrito_contents as $item) {
-            $producto = $productModel->getProducto($item['id']);
+            $producto = $productModel->getProductoById($item['producto_id']);
         
-            if ($producto && $producto['stock'] >= $item['qty']) {
+            if ($producto && $producto->stock >= $item['quantity']) {
                 $productos_validos[] = $item;
-                $total += $item['subtotal'];
+                $total += $item['precio_vta'];
             } else {
-                $productos_sin_stock[] = $item['name'];
+                $productos_sin_stock[] = $item['nombre_prod'];
                 // Eliminar del carrito el producto sin stock
-                $cartController->eliminar_item($item['rowid']);
+                $cartController->eliminar_item($item['producto_id']);
             }
         }
 
@@ -69,13 +85,13 @@ class Ventascontroller extends Controller{
             $mensaje = 'Los siguientes productos no tienen stock suficiente y fueron eliminados del carrito: <br>'
                 . implode(', ', $productos_sin_stock);
             $session->setFlashdata('mensaje', $mensaje);
-            return redirect()->to(base_url('muestro'));
+            return redirect()->to(base_url('carrito'));
         }
 
         // Si no hay productos válidos, no se registra la venta
         if (empty($productos_validos)) {
             $session->setFlashdata('mensaje', 'No hay productos válidos para registrar la venta.');
-            return redirect()->to(base_url('muestro'));
+            return redirect()->to(base_url('carrito'));
         }
 
         // Registrar cabecera de la venta
@@ -89,21 +105,22 @@ class Ventascontroller extends Controller{
         foreach ($productos_validos as $item) {
             $detalle = [
                 'venta_id' => $venta_id,
-                'producto_id' => $item['id'],
-                'cantidad' => $item['qty'],
-                'precio' => $item['subtotal']
+                'producto_id' => $item['producto_id'],
+                'cantidad' => $item['quantity'],
+                'precio' => $item['precio_vta']
             ];
             $detalleModel->insert($detalle);
         
-            $producto = $productModel->getProducto($item['id']);
-            $productModel->updateStock($item['id'], $producto['stock'] - $item['qty']);
+            $producto = $productModel->getProductoById($item['producto_id']);
+            $productModel->updateStock($item['producto_id'], $producto->stock - $item['quantity']);
         }
 
         // Vaciar carrito y mostrar confirmación
-        $cartController->borrar_carrito();
+        $cartController->vaciar();
         $session->setFlashdata('mensaje', 'Venta registrada exitosamente.');
-        return redirect()->to(base_url('vista_compras/' . $venta_id));
-
+        //fijate porque no carga el css y pasa lo mismo con edit
+        return redirect()->to(base_url('/facturitas/' . $venta_id));
+        
 
     }
 
@@ -115,7 +132,7 @@ class Ventascontroller extends Controller{
     
         $dato['titulo'] = "Mi compra";
     
-        echo view('front/head_view_crud',$dato);
+        echo view('front/head_view',$dato);
         echo view('front/nav_view');
         echo view('back/compras/vista_compras',$data);
         echo view('front/footer_view');
@@ -129,7 +146,7 @@ class Ventascontroller extends Controller{
         $data['ventas'] = $ventas->getVentas($id_usuario);
         $dato['titulo'] = "Todos mis compras";
     
-        echo view('front/head_view_crud',$dato);
+        echo view('front/header_view',$dato);
         echo view('front/nav_view');
         echo view('back/compras/ver_factura_usuario',$data);
         echo view('front/footer_view');

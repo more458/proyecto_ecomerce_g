@@ -157,6 +157,12 @@ class CarritoController extends Controller
         return redirect()->to(base_url('carrito'));
     }
 
+    public function devolver_carrito()
+    {
+        $session = session();
+        return $session->get('cart') ?? [];
+    }
+
     // Proceso de checkout (ejemplo básico, se puede expandir con Stripe, Mercado Pago, etc.)
     public function checkout()
     {
@@ -177,55 +183,49 @@ class CarritoController extends Controller
 
         // Ejemplo:
         // if (session()->get('isLoggedIn')) { // Solo si el usuario está logueado
-        //     $userId = session()->get('id');
-        //     $ventaCabeceraModel = new Ventas_cabecera_model();
-        //     $ventaDetalleModel = new Ventas_detalle_model();
-        //     $productoModel = new Producto_Model();
-
-        //     $total_venta = 0;
-        //     foreach ($cart_items as $item) {
+        //    $userId = session()->get('id');
+        //    $ventaCabeceraModel = new Ventas_cabecera_model();
+        //    $ventaDetalleModel = new Ventas_detalle_model();
+        //    $productoModel = new Producto_Model();
+        //    $total_venta = 0;
+        //    foreach ($cart_items as $item) {
         //         $total_venta += $item['precio_vta'] * $item['quantity'];
-        //     }
-
-        //     // Insertar en Ventas_cabecera
-        //     $ventaCabeceraData = [
-        //         'fecha' => date('Y-m-d H:i:s'),
-        //         'usuario_id' => $userId,
-        //         'total_venta' => $total_venta,
-        //         // Agrega otros campos necesarios como 'metodo_pago', 'estado', etc.
-        //     ];
-        //     $ventaCabeceraModel->insert($ventaCabeceraData);
-        //     $venta_id = $ventaCabeceraModel->insertID();
-
-        //     // Insertar en Ventas_detalle y actualizar stock
-        //     foreach ($cart_items as $item) {
-        //         $ventaDetalleData = [
-        //             'venta_id' => $venta_id,
-        //             'producto_id' => $item['producto_id'],
-        //             'cantidad' => $item['quantity'],
-        //             'precio_unitario' => $item['precio_vta'],
-        //         ];
-        //         $ventaDetalleModel->insert($ventaDetalleData);
-
-        //         // Actualizar stock del producto
-        //         $currentProduct = $productoModel->getProductoById($item['producto_id']);
-        //         if ($currentProduct) {
-        //             $newStock = $currentProduct->stock - $item['quantity'];
-        //             $productoModel->update($item['producto_id'], ['stock' => $newStock]);
-        //         }
-        //     }
-
-        //     $session->remove('cart'); // Vaciar carrito después de la compra
-        //     $session->setFlashdata('success', '¡Compra realizada con éxito! Su número de pedido es: ' . $venta_id);
+        //    }
+        //    // Insertar en Ventas_cabecera
+        //    $ventaCabeceraData = [
+        //        'fecha' => date('Y-m-d H:i:s'),
+        //        'usuario_id' => $userId,
+        //        'total_venta' => $total_venta,
+        //        // Agrega otros campos necesarios como 'metodo_pago', 'estado', etc.
+        //    ];
+        //    $ventaCabeceraModel->insert($ventaCabeceraData);
+        //    $venta_id = $ventaCabeceraModel->insertID();
+        //    // Insertar en Ventas_detalle y actualizar stock
+        //    foreach ($cart_items as $item) {
+        //        $ventaDetalleData = [
+        //            'venta_id' => $venta_id,
+        //            'producto_id' => $item['producto_id'],
+        //            'cantidad' => $item['quantity'],
+        //            'precio_unitario' => $item['precio_vta'],
+        //        ];
+        //        $ventaDetalleModel->insert($ventaDetalleData);
+        //        // Actualizar stock del producto
+        //        $currentProduct = $productoModel->getProductoById($item['producto_id']);
+        //        if ($currentProduct) {
+        //            $newStock = $currentProduct->stock - $item['quantity'];
+        //            $productoModel->update($item['producto_id'], ['stock' => $newStock]);
+        //        }
+        //    }
+        //    $session->remove('cart'); // Vaciar carrito después de la compra
+        //    $session->setFlashdata('success', '¡Compra realizada con éxito! Su número de pedido es: ' . $venta_id);
         //     return redirect()->to(base_url('mis_compras')); // Redirigir a una página de mis compras
-        // } else {
-        //     $session->setFlashdata('error', 'Debes iniciar sesión para completar la compra.');
-        //     return redirect()->to(base_url('login'));
-        // }
-
-        // Por ahora, solo un mensaje de éxito simulado
+        //} else {
+        //    $session->setFlashdata('error', 'Debes iniciar sesión para completar la compra.');
+        //    return redirect()->to(base_url('login'));
+        //}
+        /*Por ahora, solo un mensaje de éxito simulado
         $session->remove('cart'); // Vaciar el carrito
         $session->setFlashdata('success', '¡Proceso de compra simulado con éxito! Tu carrito ha sido vaciado.');
-        return redirect()->to(base_url('/')); // Redirigir a la página principal
+        return redirect()->to(base_url('/')); // Redirigir a la página principal*/
     }
 }

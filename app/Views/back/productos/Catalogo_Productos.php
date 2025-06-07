@@ -16,17 +16,10 @@
     <div class="row">
         <?php foreach ($productosCat as $producto): ?>
         <div class="col-md-4 mb-4">
+
             <div class="card h-100 shadow-sm">
-                <?php
-                // ¡CAMBIO AQUÍ! Usa $producto->producto_id en lugar de $producto->id
-                $imagenPath = 'assets/img/productos/producto_'.$producto->producto_id.'.jpg';
-                $imagenDefault = 'assets/img/productos/default.jpg';
-                $imagenFinal = file_exists(FCPATH.$imagenPath) ? $imagenPath : $imagenDefault;
-                ?>
-                <img src="<?= base_url($imagenFinal) ?>"
-                     class="card-img-top p-3"
-                     alt="<?= esc($producto->nombre_prod) ?>"
-                     style="height: 200px; object-fit: contain;">
+                <img src="<?= base_url('assets/uploads/' . $producto->imagen) ?>" class="card-img-top" >
+                
 
                 <div class="position-absolute top-0 end-0 m-2">
                     <?php if($producto->stock <= $producto->stock_min): ?>

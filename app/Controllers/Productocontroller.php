@@ -120,7 +120,7 @@ class Productocontroller extends Controller
 
         if (empty($prod)) {
             session()->setFlashdata('error', 'Producto no encontrado para editar.');
-            return redirect()->to(base_url('productos'));
+            return redirect()->to(base_url('crear'));
         }
 
         // Validación de los datos del formulario
@@ -190,7 +190,7 @@ class Productocontroller extends Controller
         $data = ['eliminado' => 'SI']; // Array directamente con el campo a actualizar
         $productoModel->update($id, $data);
         session()->setFlashdata('success', 'Producto eliminado lógicamente.'); // Mensaje de éxito
-        return $this->response->redirect(site_url('productos')); // Redirigir a la lista de productos
+        return $this->response->redirect(site_url('crear')); // Redirigir a la lista de productos
     }
 
     public function eliminados()
@@ -212,7 +212,7 @@ class Productocontroller extends Controller
         $data = ['eliminado' => 'NO']; // Array directamente con el campo a actualizar
         $productoModel->update($id, $data);
         session()->setFlashdata('success', 'Producto activado exitosamente.');
-        return $this->response->redirect(site_url('productos')); // CAMBIO: Redirigir a la lista de productos activos
+        return $this->response->redirect(site_url('eliminados')); // CAMBIO: Redirigir a la lista de productos activos
     }
 
     public function MostrarCatalogo()

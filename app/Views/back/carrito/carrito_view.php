@@ -76,7 +76,7 @@
                 <a href="<?= site_url('carrito/vaciar') ?>" class="btn btn-warning me-2" onclick="return confirm('¿Estás seguro de vaciar todo el carrito?');">
                     <i class="fas fa-trash"></i> Vaciar Carrito
                 </a>
-                <a href="<?= site_url('carrito/checkout') ?>" class="btn btn-success">
+                <a href="<?= site_url('/comprar') ?>" class="btn btn-success">
                     <i class="fas fa-money-check-alt"></i> Proceder al Pago
                 </a>
             </div>

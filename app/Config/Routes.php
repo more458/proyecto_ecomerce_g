@@ -31,22 +31,25 @@ $routes->get('crear', 'Productocontroller::index',['filter' => 'auth']);
 $routes->get('/agregar', 'Productocontroller::index',['filter' => 'auth']);//me parece que es lo mismo q crear
 $routes->get('form_alta', 'Productocontroller::creaproducto',['filter' => 'auth']);
 $routes->post('enviar-prod', 'Productocontroller::store',['filter' => 'auth']);
-$routes->get('editar/(:num)', 'Productocontroller::singleproducto/$1',['filter' => 'auth']);
-$routes->post('/modifica/(:num)', 'Productocontroller::modifica/$1',['filter' => 'auth']);
+$routes->get('/editar/(:num)', 'Productocontroller::singleproducto/$1',['filter' => 'auth']);
+$routes->post('modifica/(:num)', 'Productocontroller::modifica/$1',['filter' => 'auth']);
 $routes->get('borrar/(:num)', 'Productocontroller::deleteproducto/$1');
 $routes->get('eliminados', 'Productocontroller::eliminados',['filter' => 'auth']);
 $routes->get('activar_pro/(:num)', 'Productocontroller::activarproducto/$1',['filter' => 'auth']);
 
 
-$routes->get('vista_compras/(:num)', 'Ventascontroller::ver_factura/$1', ['filter' => 'auth']);
+//$routes->get('vista_compras/(:num)', 'Ventascontroller::ver_factura/$1', ['filter' => 'auth']);
 
 $routes->get('catalogo', 'Productocontroller::MostrarCatalogo',['filter' => 'auth']);
 
 /*RUTAS DEL CARRITO*/
 
-$routes->get('carrito', 'CarritoController::index');
-$routes->post('carrito/agregar', 'CarritoController::agregar');
-$routes->post('carrito/actualizar', 'CarritoController::actualizar'); // Usamos POST para actualizar
-$routes->get('carrito/eliminar/(:num)', 'CarritoController::eliminar/$1');
-$routes->get('carrito/vaciar', 'CarritoController::vaciar');
-$routes->get('carrito/checkout', 'CarritoController::checkout');
+$routes->get('carrito', 'CarritoController::index', ['filter' => 'auth']);
+$routes->post('carrito/agregar', 'CarritoController::agregar', ['filter' => 'auth']);
+$routes->post('carrito/actualizar', 'CarritoController::actualizar', ['filter' => 'auth']); // Usamos POST para actualizar
+$routes->get('carrito/eliminar/(:num)', 'CarritoController::eliminar/$1', ['filter' => 'auth']);
+$routes->get('carrito/vaciar', 'CarritoController::vaciar', ['filter' => 'auth']);
+
+$routes->get('/comprar', 'Ventas_controller::registrar_venta', ['filter' => 'auth']);
+$routes->get('/facturitas/(:num)', 'Ventas_controller::ver_facturas_usuario/$1', ['filter' => 'auth']);
+///$routes->get('carrito/checkout', 'CarritoController::checkout',);

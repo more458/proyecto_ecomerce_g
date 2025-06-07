@@ -71,6 +71,9 @@ $perfil=$session->get('perfil_id');?>
           <a class="nav-link active" aria-current="page" href="<?php echo base_url('catalogo');?>">Productos</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="<?php echo base_url('facturitas');?>">mis compras</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="<?php echo base_url('carrito');?>">
               <i class="fas fa-shopping-cart"></i>
               <?php if(session()->has('cart') && count(session('cart')) > 0): ?>
@@ -123,6 +126,9 @@ $perfil=$session->get('perfil_id');?>
         </li>
         <li class="nav-item">
           <a class="nav-link" href= "<?php echo base_url('Login');?>" >Iniciar Sesion</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="<?php echo base_url('catalogo');?>">Productos</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

@@ -32,7 +32,7 @@
                         <img src="<?= base_url('assets/uploads/' . $producto->imagen) ?>" width="60" height="60">
                     </td>
                     <td>
-                        <a href="<?= site_url('editar/' . $producto->producto_id ) ?>" class="btn btn-primary btn-sm">Editar</a>
+                        <a href="<?= base_url('editar/' . $producto->producto_id ) ?>" class="btn btn-primary btn-sm">Editar</a>
                         <a href="<?= site_url('borrar/' . $producto->producto_id ) ?>" class="btn btn-secondary btn-sm">Borrar</a>
                     </td>
                 </tr>
