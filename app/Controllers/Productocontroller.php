@@ -179,7 +179,7 @@ class Productocontroller extends Controller
 
         $productoModel->update($id, $dataToUpdate); // Actualiza el producto en la base de datos
         session()->setFlashdata('success', 'Producto actualizado exitosamente.');
-        return redirect()->to(base_url('productos')); // Redirige a la lista de productos
+        return redirect()->to(base_url('crear')); // Redirige a la lista de productos
     }
 
     //eliminar logicamente

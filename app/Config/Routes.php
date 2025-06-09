@@ -32,7 +32,7 @@ $routes->get('/agregar', 'Productocontroller::index',['filter' => 'auth']);//me 
 $routes->get('form_alta', 'Productocontroller::creaproducto',['filter' => 'auth']);
 $routes->post('enviar-prod', 'Productocontroller::store',['filter' => 'auth']);
 $routes->get('/editar/(:num)', 'Productocontroller::singleproducto/$1',['filter' => 'auth']);
-$routes->post('modifica/(:num)', 'Productocontroller::modifica/$1',['filter' => 'auth']);
+$routes->post('modified/(:num)', 'Productocontroller::modified/$1',['filter' => 'auth']);
 $routes->get('borrar/(:num)', 'Productocontroller::deleteproducto/$1');
 $routes->get('eliminados', 'Productocontroller::eliminados',['filter' => 'auth']);
 $routes->get('activar_pro/(:num)', 'Productocontroller::activarproducto/$1',['filter' => 'auth']);

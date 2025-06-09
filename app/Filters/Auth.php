@@ -12,7 +12,7 @@ class Auth implements FilterInterface
         // si el usuario no esta logueado
         if (!session()->get('logged_in')) {
             // entonces redirecciona a la pagina de login
-            return redirect()->to('/login');
+            return redirect()->to('/Login');
         }
     }
 
