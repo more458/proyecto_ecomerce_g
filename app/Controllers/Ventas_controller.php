@@ -29,7 +29,7 @@ class Ventas_controller extends Controller{
         
             if ($producto && $producto->stock >= $item['quantity']) {
                 $productos_validos[] = $item;
-                $total += $item['precio_vta'];
+                $total += $item['precio_vta'] * $item['quantity'];
             } else {
                 $productos_sin_stock[] = $item['nombre_prod'];
                 // Eliminar del carrito el producto sin stock
@@ -65,7 +65,7 @@ class Ventas_controller extends Controller{
 
 
 
-
+/*
         // Validar stock y filtrar productos válidos
         foreach ($carrito_contents as $item) {
             $producto = $productModel->getProductoById($item['producto_id']);
@@ -79,7 +79,7 @@ class Ventas_controller extends Controller{
                 $cartController->eliminar_item($item['producto_id']);
             }
         }
-
+*/
         // Si hay productos sin stock, avisar y volver al carrito
         if (!empty($productos_sin_stock)) {
             $mensaje = 'Los siguientes productos no tienen stock suficiente y fueron eliminados del carrito: <br>'
