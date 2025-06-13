@@ -128,11 +128,11 @@ class Ventas_controller extends Controller{
     {
         //echo $venta_id;die;
         $detalle_ventas = new Ventas_detalle_model();
-        $data['venta'] = $detalle_ventas->getDetalles($venta_id);
+        $data['venta'] = $detalle_ventas->getVentas($venta_id);
     
         $dato['titulo'] = "Mi compra";
     
-        echo view('front/head_view',$dato);
+        echo view('front/header_view',$dato);
         echo view('front/nav_view');
         echo view('back/compras/vista_compras',$data);
         echo view('front/footer_view');
@@ -158,16 +158,16 @@ class Ventas_controller extends Controller{
         $venta_id = $this->request->getGet('id');
         //echo $venta_id;die;
         $detalle_ventas = new Ventas_detalle_model();
-        $data['venta'] = $detalle_ventas->getDetalles($venta_id);
+        $data['venta'] = $detalle_ventas->getVentas($venta_id);
     
-            $ventascabecera = new Ventas_cabecera_model();
-            $data['usuarios']=$ventascabecera->getBuilderVentas_cabecera();
+        $ventascabecera = new Ventas_cabecera_model();
+        $data['usuarios']=$ventascabecera->getBuilderVentas_cabecera();
     
-                $dato['titulo'] = "ventas";
-                echo view('front/head_view_crud',$dato);
-                echo view('front/nav_view');
-                echo view('back/compras/ventas',$data);
-                echo view('front/footer_view');
+        $dato['titulo'] = "ventas";
+        echo view('front/head_view_crud',$dato);
+        echo view('front/nav_view');
+        echo view('back/compras/ventas',$data);
+        echo view('front/footer_view');
     }
     
 

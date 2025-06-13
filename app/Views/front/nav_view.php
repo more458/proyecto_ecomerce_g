@@ -1,7 +1,9 @@
 <?php
 $session = session();
 $nombre = $session->get('nombre');
-$perfil=$session->get('perfil_id');?>
+$perfil=$session->get('perfil_id');
+$usuarioid=$session->get('id_usuario');
+?>
 
 <header class="header-nav">
 <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
@@ -71,7 +73,7 @@ $perfil=$session->get('perfil_id');?>
           <a class="nav-link active" aria-current="page" href="<?php echo base_url('catalogo');?>">Productos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="<?php echo base_url('facturitas');?>">mis compras</a>
+          <a class="nav-link active" aria-current="page" href="<?php echo base_url('/mis-compras/' . session()->id_usuario);?>">mis compras</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="<?php echo base_url('carrito');?>">

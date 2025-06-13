@@ -51,5 +51,7 @@ $routes->get('carrito/eliminar/(:num)', 'CarritoController::eliminar/$1', ['filt
 $routes->get('carrito/vaciar', 'CarritoController::vaciar', ['filter' => 'auth']);
 
 $routes->get('/comprar', 'Ventas_controller::registrar_venta', ['filter' => 'auth']);
-$routes->get('/facturitas/(:num)', 'Ventas_controller::ver_facturas_usuario/$1', ['filter' => 'auth']);
+$routes->get('/facturitas/(:num)', 'Ventas_controller::ver_factura/$1', ['filter' => 'auth']);
+$routes->get('/mis-compras/(:num)', 'Ventas_controller::ver_facturas_usuario/$1', ['filter' => 'auth']);
+
 ///$routes->get('carrito/checkout', 'CarritoController::checkout',);
