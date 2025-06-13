@@ -54,4 +54,7 @@ $routes->get('/comprar', 'Ventas_controller::registrar_venta', ['filter' => 'aut
 $routes->get('/facturitas/(:num)', 'Ventas_controller::ver_factura/$1', ['filter' => 'auth']);
 $routes->get('/mis-compras/(:num)', 'Ventas_controller::ver_facturas_usuario/$1', ['filter' => 'auth']);
 
-///$routes->get('carrito/checkout', 'CarritoController::checkout',);
+//las vebntas que ve al admin
+$routes->get('/ventas', 'Ventas_controller::ventas');
+
+

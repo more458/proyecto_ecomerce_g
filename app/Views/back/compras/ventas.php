@@ -7,7 +7,7 @@ if (empty($venta)) { ?>
     <h4 class="alert-heading">NO posee ventas registradas!</h4>
     <p>Para realizar una compra visite nuestro catalogo.</p>
     <hr>
-    <a class="btn btn-warning my-2 w-10" href="<?=php echo base_url('catalogo') ?>">Catalogo</a>
+    <a class="btn btn-warning my-2 w-10" href="<?= base_url('catalogo') ?>">Catalogo</a>
   </div>
 </div>
 <?php }?>
@@ -35,14 +35,14 @@ if (empty($venta)) { ?>
             //$total = $row['precio'];
             $i++; ?>
             <tr class="text-center">
-              <td><?=php echo $i ?></td>
-              <td><?=php echo $row['nombre'] ?></td>
-              <td><?=php echo $row['nombre_prod'] ?></td>
-              <td><img width="100" height="65" src="<?=php echo base_url('assets/uploads/'.$imagen)?>"></td>
-              <td><?=php echo number_format($row['cantidad']) ?></td>
-              <td><?=php echo $row['precio_iva'] ?></td>
-              <?php $subtotal= ($row['precio_iva'] * $row['cantidad']); ?>
-              <td><?=php echo number_format($subtotal, 2) ?></td>
+              <td><?= $i ?></td>
+              <td><?= $row['nombre'] ?></td>
+              <td><?= $row['nombre_prod'] ?></td>
+              <td><img width="100" height="65" src="<?= base_url('assets/uploads/'.$imagen)?>"></td>
+              <td><?= number_format($row['cantidad']) ?></td>
+              <td><?= $row['precio_vta'] ?></td>
+              <?php $subtotal= ($row['precio_vta'] * $row['cantidad']); ?>
+              <td><?= number_format($subtotal, 2) ?></td>
             </tr>
         <?php $total+= $subtotal; ?>
         <!--echo $row['precio'] * $row['cantidad'];-->
@@ -54,7 +54,7 @@ if (empty($venta)) { ?>
             <h4>Total de ventas</h4>
           </td>
           <td colspan="6" class="text-right">
-            <h3><?=php echo number_format($total, 2) ?></h3>
+            <h3><?= number_format($total, 2) ?></h3>
           </td>
         </tr>
       </tfoot>

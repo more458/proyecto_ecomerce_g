@@ -15,32 +15,23 @@ class Ventas_cabecera_model extends Model{
         $builder->join('usuarios', 'usuarios.id_usuario = ventas_cabecera.usuario_id');
         
         
-        /*if($id != null){
-            $builder->where('ventas_cabecera.id', $id);
-        }*/
-
-       // $query = $builder->get();
-       // return $query->getResultArray();
-       return $builder;
+        $query = $builder->get();
+        return $query->getResultArray();
     }
 
-    public function getVentas($id = null){
-    /*   $builder = $this->getBuilderProductos();
-        $builder->where('productos.id', $id);
-        $query = $builder->get();
-        return $query->getRowArray();*/
-        $builder = $this->getBuilderCabecera();
-        
-
-        if ($id !== null) {
-            $builder->where('ventas_cabecera.id', $id);
-            $query = $builder->get();
-            return $query->getResult(); 
+    public function getVentas($id_usuario = null){
+        if ($id_usuario == null){
+            //Si el $id_usuario es null
+            //La función getBuilderVentas_cabecera() devuelve el resultado de la consulta como array.
+            return $this->getBuilderCabecera();
         } else {
-            //hay que cambiar esto por un mensaje de error
+            $db = \Config\Database::connect();
+            $builder = $db->table('ventas_cabecera');
+            $builder->select("*");
+            $builder->join('usuarios', 'usuarios.id_usuario = ventas_cabecera.usuario_id');
+            $builder->where('ventas_cabecera.usuario_id', $id_usuario);
             $query = $builder->get();
-            return $query->getRow(); 
-            
+            return $query->getResultArray();
         }
     }
 }

@@ -1,6 +1,6 @@
 <?php
 $session=session();
-/*if (empty($venta)) : ?>
+if (empty($venta)) : ?>
     <!-- avisamos que no hay consultas -->
     <div class="alert alert-dark text-center" role="alert">
         <h4 class="alert-heading">No posee compras registradas</h4>
@@ -9,7 +9,7 @@ $session=session();
         <a class="btn btn-warning my-2 w-10" href="<?php echo base_url('catalogo') ?>">Catalogo</a>
     </div>
 <?php endif; ?>
-*/
+
 <!-- Mostrar mensaje Flash si existe -->
 <?php if (session()->getFlashdata('mensaje')) : ?>
     <div class="alert alert-warning alert-dismissible fade show mt-3 mx-3" role="alert">
@@ -38,17 +38,17 @@ $session=session();
         <!-- Si es array de ventas y no está vacío -->
           <?php if (!empty($venta) && is_array($venta)) :
             foreach ($venta as $row) {
-              $imagen = $row->imagen;
+              $imagen = $row['imagen'];
               // $total = $row['precio'];
               $i++; ?>
               <tr class="text-center">
                 <td><?php echo $i ?></td>
-                <td><?php echo $row->nombre_prod ?></td>
+                <td><?php echo $row['nombre_prod'] ?></td>
                 <td><img width="100" height="65" src="<?php echo base_url('assets/uploads/'.$imagen) ?>"></td>
-                <td><?php echo number_format($row->cantidad) ?></td>
-                <td><?php echo $row->precio_vta ?></td>
+                <td><?php echo number_format($row['cantidad']) ?></td>
+                <td><?php echo $row['precio_vta'] ?></td>
                 <td>
-                  <?php $subtotal= ($row->precio_vta * $row->cantidad);
+                  <?php $subtotal= ($row['precio_vta'] * $row['cantidad']);
                   echo "$" . number_format($subtotal, 2); ?>
                 </td>
               </tr>
