@@ -24,8 +24,7 @@ $usuarioid=$session->get('id_usuario');
           <a class="nav-link active" aria-current="page" href="<?php echo base_url('Casa');?>">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href='#'>CRUD Usuario</a>
-
+          <a class="nav-link" href="<?php echo base_url('/usuarios');?>">CRUD Usuarios</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="<?php echo base_url('crear');?>">CRUD Productos</a>

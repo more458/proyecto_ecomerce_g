@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 use App\Models\Usuarios_model;
+use App\Models\Perfiles_model;
 use CodeIgniter\Controller;
 
 class Usuario_controller extends Controller{
@@ -54,5 +55,66 @@ class Usuario_controller extends Controller{
             return redirect()->to(base_url('registro'));
         }
     }
+
+    public function modoAdmin(){
+        $usuarios = new Usuarios_model();
+        $dato['usuarios'] = $usuarios->getUsuarioAll();
+        
+        $data['titulo'] = 'Crud de usuarios';
+        echo view('front/header_view', $data);
+        echo view('front/nav_view');
+        echo view('back/usuario/crud_usuario', $dato);
+        echo view('front/footer_view');
+    }
+
+    public function usuariosEliminados(){
+        $usuarios = new Usuarios_model();
+        $dato['usuarios'] = $usuarios->getUsuarioElimAll();
+        
+        $data['titulo'] = 'Usuarios baneados';
+        echo view('front/header_view', $data);
+        echo view('front/nav_view');
+        echo view('back/usuario/usuarios_ban', $dato);
+        echo view('front/footer_view');
+    }
+
+    public function deleteUsuario($id)
+    {
+        $usuarioModel = new Usuarios_model();
+        // CAMBIO: Solo necesitamos actualizar el campo 'eliminado', no recuperar todo el objeto si no es necesario
+        $data = ['baja' => 'SI']; // Array directamente con el campo a actualizar
+        $usuarioModel->actualizarUsuario($id, $data);
+        session()->setFlashdata('success', 'Usuario baneado.'); // Mensaje de éxito
+        return $this->response->redirect(site_url('/usuarios')); // Redirigir a la lista de productos
+    }
+
+    public function activarUsuario($id)
+    {
+        $usuarioModel = new Usuarios_model();
+        // CAMBIO: Solo necesitamos actualizar el campo 'eliminado'
+        $data = ['baja' => 'NO']; // Array directamente con el campo a actualizar
+        $usuarioModel->actualizarUsuario($id, $data);
+        session()->setFlashdata('success', 'Usuario activado exitosamente.');
+        return $this->response->redirect(site_url('/baneados')); // CAMBIO: Redirigir a la lista de productos activos
+    }
+
+    /*
+    public function singleUsuario($id = null){
+        $usuarioModel = new Usuarios_model();
+        // Usamos getProductoById para asegurarnos de que cargamos un objeto con el alias 'producto_id'
+        $data['old'] = $usuarioModel->getUsuarioAll($id);
+
+        if (empty($data['old'])){
+            // Lanzar una excepción de página no encontrada es una buena práctica
+            throw new \CodeIgniter\Exceptions\PageNotFoundException('No se ha seleccionado un producto para editar.');
+        }
+
+        $data['titulo']='Editar Producto'; // CAMBIO: Título más apropiado para la vista de edición
+        echo view('front/header_view', $data);
+        echo view('front/nav_view');
+        echo view('back/usario/editar_usuario', $data); // Carga la vista de edición
+        echo view('front/footer_view');
+    }*/
+
 } 
 ?>

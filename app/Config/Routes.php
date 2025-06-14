@@ -56,5 +56,11 @@ $routes->get('/mis-compras/(:num)', 'Ventas_controller::ver_facturas_usuario/$1'
 
 //las vebntas que ve al admin
 $routes->get('/ventas', 'Ventas_controller::ventas');
+//rutas del crud de usuarios 
+$routes->get('/usuarios', 'Usuario_controller::modoAdmin');
+$routes->get('/baneados', 'Usuario_controller::usuariosEliminados');
+$routes->get('/banUsu/(:num)', 'Usuario_controller::deleteUsuario/$1');
+$routes->get('/activarUsu/(:num)', 'Usuario_controller::activarUsuario/$1');
+
 
 
