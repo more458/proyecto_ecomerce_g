@@ -1,4 +1,9 @@
 <div class="container pt-5 mt-5 mb-5">
+    <!-- IMAGEN DE FONDO -->
+    <div class="imagen-fondo">
+      <img src="assets/img/fondo.jpg" alt="fondo">
+    </div>
+    
     <div class="card-header text-justify">
         <div class="row d-flex justify-content-center">
             <div class="col-lg-3" style="width: 50%;">
