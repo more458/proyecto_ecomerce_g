@@ -215,7 +215,7 @@ class Productocontroller extends Controller
         return $this->response->redirect(site_url('eliminados')); // CAMBIO: Redirigir a la lista de productos activos
     }
 
-    public function MostrarCatalogo()
+    /*public function MostrarCatalogo()
     {
         $productoModel = new Producto_Model();
         $data['productosCat'] = $productoModel->getProductoAll();
@@ -224,6 +224,35 @@ class Productocontroller extends Controller
         echo view('front/header_view', $dato);
         echo view('front/nav_view');
         echo view('back/productos/Catalogo_Productos', $data);
+        echo view('front/footer_view');
+    }*/
+
+    public function MostrarCatalogo()
+    {
+        $productoModel = new Producto_Model();
+        $categoriaModel = new categoria_model(); // instanciamos 
+
+        // obtiene id de categoría segun lo que se selecciona
+        $categoriaId = $this->request->getVar('categoria_id');
+
+        // todas las categorías para el filtro 
+        $data['categorias'] = $categoriaModel->getCategorias();
+
+        // filtrado
+        if (!empty($categoriaId)) {
+            $data['productosCat'] = $productoModel->where('categoria_id', $categoriaId)
+                                                 ->where('eliminado', 'NO')
+                                                 ->findAll();
+            $data['selectedCategory'] = $categoriaId; // mantenemos seleciuonado
+        } else {
+            // muestra todo sin filtrar
+            $data['productosCat'] = $productoModel->where('eliminado', 'NO')->findAll();
+        }
+
+        $dato['titulo']='Catálogo de Productos'; 
+        echo view('front/header_view', $dato);
+        echo view('front/nav_view');
+        echo view('back/productos/Catalogo_Productos', $data); 
         echo view('front/footer_view');
     }
 
