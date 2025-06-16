@@ -18,7 +18,7 @@
     <form method="post" action="<?= base_url('enviarlogin');?>">
         <?= csrf_field(); ?> <!-- genera un campo oculto con el token de seguridad -->
        <?php if (!empty(session()->getFlashdata('msg'))): ?>
-            <div class="alert alert-danger"><?= session()->getFlashdata('fmsg'); ?></div>
+            <div class="alert alert-danger"><?= session()->getFlashdata('msg'); ?></div>
         <?php endif; ?>
 
         <?php if (!empty(session()->getFlashdata('msg'))): ?>
