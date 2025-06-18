@@ -32,6 +32,9 @@ $usuarioid=$session->get('id_usuario');
         <li class="nav-item">
           <a class="nav-link" href="<?php echo base_url('/ventas');?>">CRUD Ventas</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?php echo base_url('/listar_consultas');?>">Consultas</a>
+        </li>
 
         <!--<li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

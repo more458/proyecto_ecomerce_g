@@ -116,5 +116,39 @@ class Usuario_controller extends Controller{
         echo view('front/footer_view');
     }*/
 
+    /*MANEJAMOS LAS CONSULATAS */
+    public function listar_consultas(){
+        // instanciO
+        $consultas = new consulta_model();
+
+        //TRAEMOS TODO
+        $data['consultas'] = $consultas->getConsultas();
+        $data['titulo'] = 'Gestion-Consultas';
+
+        echo view('front/head_view_crud', $dato);
+        echo view('front/nav_view');
+        echo view('back/consultas/listar_consultas', $data);
+        echo view('front/footer_view');
+    }
+
+    public function atender_consulta($id = null){
+        // instancio 
+        $consultasM = new consulta_model();
+        // tomamos por id
+        $consultasM->getConsulta($id);
+        /*actualizado*/
+        $consultasM->update($id, ['respuesta' => 'SI']);
+        return redirect()->to(base_url('listar_consultas'));
+    }
+    
+    public function eliminar_consulta($id = null){
+        // instancio
+        $model = new consulta_model();
+        $model->getConsulta($id);
+        $model->delete($id);
+        
+        return redirect()->to(base_url('listar_consultas'));
+    }
+
 } 
 ?>
