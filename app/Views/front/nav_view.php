@@ -75,10 +75,10 @@ $usuarioid=$session->get('id_usuario');
           <a class="nav-link" href="<?php echo base_url('Comercializacion');?>">Comercializacion</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="<?php echo base_url('catalogo');?>">Productos</a>
+          <a class="nav-link active" href="<?php echo base_url('catalogo');?>">Productos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="<?php echo base_url('/mis-compras/' . session()->id_usuario);?>">mis compras</a>
+          <a class="nav-link active" href="<?php echo base_url('/mis-compras/' . session()->id_usuario);?>">Mis compras</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="<?php echo base_url('carrito');?>">
@@ -132,10 +132,10 @@ $usuarioid=$session->get('id_usuario');
           <a class="nav-link" href="<?php echo base_url('registro');?>">Registrarse</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href= "<?php echo base_url('Login');?>" >Iniciar Sesion</a>
+          <a class="nav-link" href= "<?php echo base_url('Login');?>" >Iniciar sesión</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="<?php echo base_url('catalogo');?>">Productos</a>
+          <a class="nav-link" href="<?php echo base_url('catalogo');?>">Productos</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

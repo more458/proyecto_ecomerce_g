@@ -68,7 +68,8 @@ $routes->get('atender_consulta/(:segment)', 'Usuario_controller::atender_consult
 $routes->get('eliminar_consulta/(:segment)', 'Usuario_controller::eliminar_consulta/$1', ['filter' => 'auth:1']);
 
 //enviar contacto
-$routes->get('Info_contact/(:num)', 'Usuario_controller::Contact/$1');
+$routes->get('Info_contact', 'Usuario_controller::Contact');//ruta para el usuario no logueado
+$routes->get('Info_contact/(:num)', 'Usuario_controller::Contact/$1');//para logueado
 $routes->post('enviar-consul','Usuario_controller::consultasValidation'); 
 
 $routes->get('/AccesoDenegado','Home::denegado');

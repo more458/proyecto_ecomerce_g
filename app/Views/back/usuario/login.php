@@ -4,10 +4,10 @@
       <img src="assets/img/fondo.jpg" alt="fondo">
     </div>
     
-    <div class="card-header text-justify">
+    <div class="card-header text-center">
         <div class="row d-flex justify-content-center">
-            <div class="col-lg-3" style="width: 50%;">
-                <h4>Iniciar Sesion</h4>
+            <div class="col-lg-4" style="width: 50%;">
+                <h4>Iniciar Sesión</h4>
             </div>
         </div>
     </div>
@@ -30,7 +30,7 @@
             <!-- email -->
             <div class="mb-2">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" id="email" name="email" class="form-control" placeholder="correo electronico">
+                <input type="email" id="email" name="email" class="form-control" placeholder="Correo electronico">
                 <?php if ($validation->getError('email')): ?>
                     <div class="alert alert-danger mt-2">
                         <?= $validation->getError('email'); ?>
@@ -51,7 +51,7 @@
                 
                 <!-- Boton de envio -->
             <div class="text-center">
-                <button type="submit" class="btn btn-primary">Iniciar Sesion</button>
+                <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
             </div>
 
             </div>

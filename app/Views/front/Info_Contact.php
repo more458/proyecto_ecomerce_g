@@ -1,24 +1,36 @@
 <?php $validation = \Config\Services::validation(); ?>
 
 <?php
-$id_usuario = $old->id_usuario ?? null;
-$nombre = $old->nombre ?? '';
-$apellido = $old->apellido ?? null;
-$email = $old->email ?? '';
-$telefono = $old->telefono ?? ''; // se agrega tambien para retener en caso de error
-$mensaje = $old->mensaje ?? '';   // same
+$session = \Config\Services::session();//instansiamos la sesion
+
+//inicializamos 
+$id_usuario = null;
+$nombre = '';
+$apellido = '';
+$email = '';
+$telefono = ''; 
+$mensaje = '';  
+
+// asi verificamos si el usuario está logueado y entonces guardamos sus datos en las variables
+if ($session->get('isLoggedIn')) {
+    $id_usuario = $session->get('id_usuario'); // Si guardas el ID del usuario en sesión
+    $nombre = $session->get('nombre_usuario');
+    $apellido = $session->get('apellido_usuario');
+    $email = $session->get('email_usuario');
+}
+
 ?>
 
 <body class="contact-body">
     <div class="titulo">
         <h1 class="contact-h1"><?php echo $titulo="Información de Contacto"?></h1>
     </div>
-      <!-- IMAGEN DE FONDO -->
+    <!-- IMAGEN DE FONDO -->
     <div class="imagen-fondo">
-      <img src="<?= base_url('assets/img/fondo.jpg') ?>" alt="fondo">
+        <img src="<?= base_url('assets/img/fondo.jpg') ?>" alt="fondo">
     </div>
 
-  <!-- INFO DEL CONTACTO -->
+    <!-- INFO DEL CONTACTO -->
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-5 bg-light p-4 rounded shadow">
@@ -37,6 +49,7 @@ $mensaje = $old->mensaje ?? '';   // same
                 <p><strong>Horario de Atención:</strong> Lunes a Viernes de 9:00 a 18:00 hs.</p>
             </div>
             <!-- FORMULARIO -->
+            <!-- usamos set_value() se encargará de rellenar los campos.-->
             <div class="col-md-7">
                 <form class="row g-3 mt-2 shadow p-4 rounded bg-light" action="<?= base_url('enviar-consul') ?>" method="post">
                     <div class="col-md-6">
@@ -94,8 +107,7 @@ $mensaje = $old->mensaje ?? '';   // same
                         <?php endif; ?>
                     </div>
                     <div id="alertaErrores" class="alert alert-danger d-none" role="alert">
-                    </div><!--usamos bootstrap para que el mensaje de alerta de error en el envio de formulario tenga mas estilo
-                    y no sea tan brusco como un alert-->
+                    </div>
                     <div class="col-12">
                         <button type="submit" class="btn btn-primary">Enviar</button>
                     </div>
@@ -107,6 +119,3 @@ $mensaje = $old->mensaje ?? '';   // same
     <br><br>
 
 </body>
-
-
-

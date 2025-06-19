@@ -5,7 +5,7 @@
           <img src="assets/img/fondo.jpg" alt="fondo">
     </div>
 
-    <div class="card-header text-justify">
+    <div class="card-header text-center">
         <div class="row d-flex justify-content-center">
             <div class="col-lg-3" style="width: 50%;">
                 <h4>Registrarse</h4>
@@ -76,7 +76,7 @@
             <!-- Contraseña -->
             <div class="mb-3">
                 <label for="pass" class="form-label">Contraseña</label>
-                <input type="password" id="pass" name="pass" class="form-control" placeholder="Contraseña">
+                <input type="password" id="pass" name="pass" class="form-control" placeholder="contraseña">
                 <?php if ($validation->getError('pass')): ?>
                     <div class="alert alert-danger mt-2">
                         <?= $validation->getError('pass'); ?>
