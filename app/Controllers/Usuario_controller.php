@@ -158,7 +158,7 @@ class Usuario_controller extends Controller{
 
         if (empty($data['old'])){
             // Lanzar una excepción de página no encontrada es una buena práctica
-            throw new \CodeIgniter\Exceptions\PageNotFoundException('No se ha seleccionado un producto para editar.');
+            throw new \CodeIgniter\Exceptions\PageNotFoundException('No se ha seleccionado una consulta para editar.');
         }
 
 
@@ -191,7 +191,7 @@ class Usuario_controller extends Controller{
             $dato['titulo']='Informacion de Contacto'; // CAMBIO: Título más apropiado para la vista de edición
             echo view('front/header_view', $dato);
             echo view('front/nav_view');
-            echo view('front/info_Contact', ['validation' => $this->validator]); // Carga la vista de edición
+            echo view('front/info_Contact', ['validation' => $this->validator, 'old' => (object)$this->request->getPost()]); // Carga la vista de edición
             echo view('front/footer_view');
             
             
@@ -202,7 +202,8 @@ class Usuario_controller extends Controller{
                 'apellido'  => $this->request->getVar('apellido'),
                 'email'     => $this->request->getVar('email'),
                 'telefono'  => $this->request->getVar('telefono'),
-                'mensaje'   => $this->request->getVar('mensaje')
+                'mensaje'   => $this->request->getVar('mensaje'),
+                'respuesta' => 'NO' 
                 
             ]);
             // Flashdata funciona solo en redirigir la funcion en el controlador a la vista de carga

@@ -63,7 +63,7 @@ $routes->get('/banUsu/(:num)', 'Usuario_controller::deleteUsuario/$1');
 $routes->get('/activarUsu/(:num)', 'Usuario_controller::activarUsuario/$1');
 
 //gestion de consultas
-$routes->get('listar_consultas',  'Usuario_controller::listar_consultas');
+$routes->get('listar_consultas',  'Usuario_controller::listar_consultas', ['filter' => 'auth']);
 $routes->get('atender_consulta/(:segment)', 'Usuario_controller::atender_consulta/$1');
 $routes->get('eliminar_consulta/(:segment)', 'Usuario_controller::eliminar_consulta/$1');
 
