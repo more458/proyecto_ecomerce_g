@@ -61,6 +61,14 @@ class Home extends BaseController
         echo view ('front/footer_view');
     }
 
+    public function denegado()
+    {
+        $tituloVar['titulo']='Acceso Denegado';
+        echo view ('front/header_view',$tituloVar);
+        echo view ('front/nav_view');
+        echo view ('back/filtros/denegado');
+        echo view ('front/footer_view');
+    }
     
 
     
