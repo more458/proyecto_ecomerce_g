@@ -41,6 +41,8 @@ class Home extends BaseController
         echo view ('front/footer_view');  
     }
 
+
+    
     public function Contact()
     {
         $tituloVar['titulo']='Comercializacion';

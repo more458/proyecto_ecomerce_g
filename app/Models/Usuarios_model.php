@@ -32,6 +32,8 @@ class Usuarios_model extends Model
         }
     }
 
+    
+
     public function getUsuarioAll($id = null) {
     $builder = $this->getBuilderUsuario();
     $builder->where('baja', 'NO'); // Filtra solo productos eliminados

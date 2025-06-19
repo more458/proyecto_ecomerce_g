@@ -9,7 +9,7 @@ $routes->get('/', 'Home::index');
 $routes->get('Casa', 'Home::index');
 $routes->get('quienesSomos', 'Home::quienes_somos');
 $routes->get('Comercializacion', 'Home::Comercializacion');
-$routes->get('Info_contact', 'Home::Contact');
+
 $routes->get('Terminos_Uso', 'Home::terminosUso');
 $routes->get('Catalogo_productos', 'Home::productos');
 //$routes->get('form_alta', 'Home::alta_productos');
@@ -58,9 +58,16 @@ $routes->get('/mis-compras/(:num)', 'Ventas_controller::ver_facturas_usuario/$1'
 $routes->get('/ventas', 'Ventas_controller::ventas');
 //rutas del crud de usuarios 
 $routes->get('/usuarios', 'Usuario_controller::modoAdmin');
-$routes->get('/baneados', 'Usuario_controller::usuariosEliminados');
+$routes->get('/baneados', 'Usuario_controller::usuariosEliminados', ['filter' => 'auth']);
 $routes->get('/banUsu/(:num)', 'Usuario_controller::deleteUsuario/$1');
 $routes->get('/activarUsu/(:num)', 'Usuario_controller::activarUsuario/$1');
 
+//gestion de consultas
+$routes->get('listar_consultas',  'Usuario_controller::listar_consultas');
+$routes->get('atender_consulta/(:segment)', 'Usuario_controller::atender_consulta/$1');
+$routes->get('eliminar_consulta/(:segment)', 'Usuario_controller::eliminar_consulta/$1');
 
+//enviar contacto
+$routes->get('Info_contact/(:num)', 'Usuario_controller::Contact/$1');
+$routes->post('enviar-consul','Usuario_controller::consultasValidation'); 
 

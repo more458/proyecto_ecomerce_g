@@ -3,6 +3,7 @@
 namespace App\Controllers;
 use App\Models\Usuarios_model;
 use App\Models\Perfiles_model;
+use App\Models\consulta_model;
 use CodeIgniter\Controller;
 
 class Usuario_controller extends Controller{
@@ -123,9 +124,9 @@ class Usuario_controller extends Controller{
 
         //TRAEMOS TODO
         $data['consultas'] = $consultas->getConsultas();
-        $data['titulo'] = 'Gestion-Consultas';
+        $dato['titulo'] = 'Gestion-Consultas';
 
-        echo view('front/head_view_crud', $dato);
+        echo view('front/header_view', $dato);
         echo view('front/nav_view');
         echo view('back/consultas/listar_consultas', $data);
         echo view('front/footer_view');
@@ -150,5 +151,64 @@ class Usuario_controller extends Controller{
         return redirect()->to(base_url('listar_consultas'));
     }
 
+    public function Contact($id = null){
+        $usuario = new Usuarios_model();
+        // Usamos getProductoById para asegurarnos de que cargamos un objeto con el alias 'producto_id'
+        $data['old'] = $usuario->getUsuarioAll($id);
+
+        if (empty($data['old'])){
+            // Lanzar una excepción de página no encontrada es una buena práctica
+            throw new \CodeIgniter\Exceptions\PageNotFoundException('No se ha seleccionado un producto para editar.');
+        }
+
+
+        $dato['titulo']='Informacion de Contacto'; // CAMBIO: Título más apropiado para la vista de edición
+        echo view('front/header_view', $dato);
+        echo view('front/nav_view');
+        echo view('front/info_Contact', $data); // Carga la vista de edición
+        echo view('front/footer_view');
+    }
+
+
+
+
+
+
+    public function consultasValidation(){
+        $input = $this->validate([
+            'nombre'    => 'required|min_length[3]',      
+            'apellido'  => 'required|min_length[3]|max_length[50]',
+            'email'     => 'required|min_length[4]|max_length[100]',
+            'telefono'  => 'required|min_length[4]|max_length[35]',
+            'mensaje'   => 'required|min_length[5]|max_length[250]'
+
+        ],
+        );
+
+        $consulta = new consulta_model();
+
+        if (!$input) {
+            $dato['titulo']='Informacion de Contacto'; // CAMBIO: Título más apropiado para la vista de edición
+            echo view('front/header_view', $dato);
+            echo view('front/nav_view');
+            echo view('front/info_Contact', ['validation' => $this->validator]); // Carga la vista de edición
+            echo view('front/footer_view');
+            
+            
+
+        } else {
+            $consulta->save([
+                'nombre'    => $this->request->getVar('nombre'),
+                'apellido'  => $this->request->getVar('apellido'),
+                'email'     => $this->request->getVar('email'),
+                'telefono'  => $this->request->getVar('telefono'),
+                'mensaje'   => $this->request->getVar('mensaje')
+                
+            ]);
+            // Flashdata funciona solo en redirigir la funcion en el controlador a la vista de carga
+            session()->setFlashdata('succes', 'Consulta registrada con exito');
+            return redirect()->to(base_url('Casa'));
+        }
+    }
 } 
 ?>

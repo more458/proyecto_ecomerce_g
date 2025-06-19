@@ -33,7 +33,7 @@ $usuarioid=$session->get('id_usuario');
           <a class="nav-link" href="<?php echo base_url('/ventas');?>">CRUD Ventas</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?php echo base_url('/listar_consultas');?>">Consultas</a>
+          <a class="nav-link" href="<?php echo base_url('listar_consultas');?>">Consultas</a>
         </li>
 
         <!--<li class="nav-item dropdown">
@@ -101,7 +101,7 @@ $usuarioid=$session->get('id_usuario');
             Mas
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="<?php echo base_url('Info_contact');?>">Informacion de contacto</a></li>
+            <li><a class="dropdown-item" href="<?php echo base_url('Info_contact/' . session()->id_usuario);?>">Informacion de contacto</a></li>
             <li><a class="dropdown-item" href="<?php echo base_url('Terminos_Uso');?>">Terminos de Uso</a></li>
           </ul>
         </li>
