@@ -70,7 +70,7 @@ if (empty($venta)) : ?>
       </table>
     </div>
   </div>
-  <div class="row">
+  <div class="row"><!--mensajito-->
     <div class="col-xl-12 col-xs-12 text-center">
       <h5 class="text-warning">Gracias por su compra!</h5>
     </div>

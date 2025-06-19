@@ -121,8 +121,6 @@ class Usuario_controller extends Controller{
 
     // Método para mostrar el formulario de contacto (adaptado para usuarios logueados y no logueados)
     public function Contact(){
-        // Ya no cargamos datos 'old' de un usuario aquí.
-        // La vista lo manejará tomando de la sesión o del POST (via withInput()).
         $data = []; // Inicializamos data vacía.
 
         $dato['titulo']='Informacion de Contacto';
@@ -137,7 +135,7 @@ class Usuario_controller extends Controller{
         $input = $this->validate([
             'nombre'    => 'required|min_length[3]',
             'apellido'  => 'required|min_length[3]|max_length[50]',
-            'email'     => 'required|min_length[4]|max_length[100]|valid_email', // Se removió 'is_unique' aquí
+            'email'     => 'required|min_length[4]|max_length[100]|valid_email', 
             'telefono'  => 'required|min_length[4]|max_length[35]',
             'mensaje'   => 'required|min_length[5]|max_length[250]'
         ]);

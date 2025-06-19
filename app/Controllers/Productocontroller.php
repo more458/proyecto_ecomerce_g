@@ -215,17 +215,6 @@ class Productocontroller extends Controller
         return $this->response->redirect(site_url('eliminados')); // CAMBIO: Redirigir a la lista de productos activos
     }
 
-    /*public function MostrarCatalogo()
-    {
-        $productoModel = new Producto_Model();
-        $data['productosCat'] = $productoModel->getProductoAll();
-
-        $dato['titulo']='Crud_productos';
-        echo view('front/header_view', $dato);
-        echo view('front/nav_view');
-        echo view('back/productos/Catalogo_Productos', $data);
-        echo view('front/footer_view');
-    }*/
 
     public function MostrarCatalogo()
     {

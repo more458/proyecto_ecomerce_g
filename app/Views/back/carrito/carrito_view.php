@@ -15,10 +15,11 @@
         </div>
     <?php endif; ?>
 
+    <!--CARRITO VACIO-->
     <?php if (empty($cart_items)): ?>
         <div class="alert alert-info">Tu carrito está vacío. ¡Empieza a añadir productos!</div>
         <a href="<?= base_url('/') ?>" class="btn btn-primary">Volver al catálogo</a>
-    <?php else: ?>
+    <?php else: ?><!--CARRITO-->
         <div class="table-responsive">
             <table class="table table-bordered table-striped align-middle">
                 <thead class="table-dark">
@@ -73,15 +74,16 @@
             </table>
         </div>
 
+        <!--BOTONES-->
         <div class="d-flex justify-content-between mt-4">
-            <a href="<?= base_url('/') ?>" class="btn btn-secondary">Seguir Comprando</a>
+            <a href="<?= base_url('/') ?>" class="btn btn-secondary">Seguir Comprando</a><!--SEGUIMOS COMPRANDO-->
             <div>
                 <a href="<?= site_url('carrito/vaciar') ?>" class="btn btn-warning me-2" onclick="return confirm('¿Estás seguro de vaciar todo el carrito?');">
-                    <i class="fas fa-trash"></i> Vaciar Carrito
-                </a>
+                    <i class="fas fa-trash"></i> Vaciar Carrito 
+                </a><!--VACIAR-->
                 <a href="<?= site_url('/comprar') ?>" class="btn btn-success">
                     <i class="fas fa-money-check-alt"></i> Proceder al Pago
-                </a>
+                </a><!--PAGO-->
             </div>
         </div>
     <?php endif; ?>

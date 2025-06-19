@@ -10,8 +10,7 @@ class CarritoController extends Controller
     public function __construct()
     {
         helper(['form', 'url']);
-        // Asegúrate de que la sesión esté cargada. CodeIgniter lo hace automáticamente si está en Config/Autoload.php
-        // pero puedes forzarla aquí si es necesario: service('session');
+        
     }
 
     // Muestra la vista del carrito
@@ -23,7 +22,7 @@ class CarritoController extends Controller
         $dato['titulo'] = 'Mi Carrito';
         echo view('front/header_view', $dato);
         echo view('front/nav_view');
-        echo view('back/carrito/carrito_view', $data); // La vista que crearemos
+        echo view('back/carrito/carrito_view', $data); 
         echo view('front/footer_view');
     }
 
@@ -174,58 +173,5 @@ class CarritoController extends Controller
             return redirect()->to(base_url('carrito'));
         }
 
-        /*CODIGO DE GEMINI QUE ME RECOMENDO PARA EL CHECKOUT*/
-        // Aquí iría la lógica real de la compra:
-        // 1. Validar stock final
-        // 2. Crear un registro en la tabla de ventas (Ventas_cabecera y Ventas_detalle)
-        // 3. Actualizar el stock de los productos
-        // 4. Limpiar el carrito
-
-        // Ejemplo:
-        // if (session()->get('isLoggedIn')) { // Solo si el usuario está logueado
-        //    $userId = session()->get('id');
-        //    $ventaCabeceraModel = new Ventas_cabecera_model();
-        //    $ventaDetalleModel = new Ventas_detalle_model();
-        //    $productoModel = new Producto_Model();
-        //    $total_venta = 0;
-        //    foreach ($cart_items as $item) {
-        //         $total_venta += $item['precio_vta'] * $item['quantity'];
-        //    }
-        //    // Insertar en Ventas_cabecera
-        //    $ventaCabeceraData = [
-        //        'fecha' => date('Y-m-d H:i:s'),
-        //        'usuario_id' => $userId,
-        //        'total_venta' => $total_venta,
-        //        // Agrega otros campos necesarios como 'metodo_pago', 'estado', etc.
-        //    ];
-        //    $ventaCabeceraModel->insert($ventaCabeceraData);
-        //    $venta_id = $ventaCabeceraModel->insertID();
-        //    // Insertar en Ventas_detalle y actualizar stock
-        //    foreach ($cart_items as $item) {
-        //        $ventaDetalleData = [
-        //            'venta_id' => $venta_id,
-        //            'producto_id' => $item['producto_id'],
-        //            'cantidad' => $item['quantity'],
-        //            'precio_unitario' => $item['precio_vta'],
-        //        ];
-        //        $ventaDetalleModel->insert($ventaDetalleData);
-        //        // Actualizar stock del producto
-        //        $currentProduct = $productoModel->getProductoById($item['producto_id']);
-        //        if ($currentProduct) {
-        //            $newStock = $currentProduct->stock - $item['quantity'];
-        //            $productoModel->update($item['producto_id'], ['stock' => $newStock]);
-        //        }
-        //    }
-        //    $session->remove('cart'); // Vaciar carrito después de la compra
-        //    $session->setFlashdata('success', '¡Compra realizada con éxito! Su número de pedido es: ' . $venta_id);
-        //     return redirect()->to(base_url('mis_compras')); // Redirigir a una página de mis compras
-        //} else {
-        //    $session->setFlashdata('error', 'Debes iniciar sesión para completar la compra.');
-        //    return redirect()->to(base_url('login'));
-        //}
-        /*Por ahora, solo un mensaje de éxito simulado
-        $session->remove('cart'); // Vaciar el carrito
-        $session->setFlashdata('success', '¡Proceso de compra simulado con éxito! Tu carrito ha sido vaciado.');
-        return redirect()->to(base_url('/')); // Redirigir a la página principal*/
     }
 }

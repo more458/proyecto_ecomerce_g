@@ -29,7 +29,7 @@
                             <td><?php echo $row['email'] ?></td>
                             <td><?php echo $row['mensaje'] ?></td>
                             <td><?php echo $row['respuesta'] ?></td>
-                            <td>
+                            <td><!-- nos encargamos de atender o no la consulta-->
                                 <?php if ($row['respuesta'] == 'NO') { ?>
                                     <a href="<?php echo base_url('atender_consulta/' . $row['id_consulta']) ?>" class="btn btn-success btn-sm">
                                         Atender

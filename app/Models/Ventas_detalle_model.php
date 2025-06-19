@@ -23,20 +23,5 @@ class Ventas_detalle_model extends Model{
         $query = $builder->get();
         return $query->getResultArray();
     }
-    /*
-    public function getVentas($id_usuario = null){
-        if ($id_usuario == null){
-            //Si el $id_usuario es null
-            //La función getBuilderVentas_cabecera() devuelve el resultado de la consulta como array.
-            return $this->getBuilderVentas_cabecera();
-        } else {
-            $db = \Config\Database::connect();
-            $builder = $db->table('ventas_cabecera');
-            $builder->select("*");
-            $builder->join('usuarios', 'usuarios.id_usuario = ventas_cabecera.usuario_id');
-            $builder->where('ventas_cabecera.usuario_id', $id_usuario);
-            $query = $builder->get();
-            return $query->getResultArray();
-        }
-    }*/
+    
 }

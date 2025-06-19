@@ -1,12 +1,13 @@
 <div class="container mt-4">
     <div class="d-flex justify-content-between mb-3">
-        <div>
+        <div><!--botones de baneo y de agregar-->
             <a href="<?php echo base_url('registro');?>" class="btn btn-success">Agregar</a>
             <a href="<?= base_url('/baneados') ?>" class="btn btn-danger">Baneados</a>
         </div>
         <input type="text" class="form-control w-25" placeholder="Search..." id="searchInput">
     </div>
 
+    <!--tabla-->
     <table class="table table-bordered table-striped text-center">
         <thead class="thead-light">
             <tr>
