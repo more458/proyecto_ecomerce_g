@@ -38,7 +38,10 @@
                             <td><?= esc($item['nombre_prod']) ?></td>
                             <td>
                                 <?php
-                                $imagenPath = 'assets/img/productos/producto_'. $item['producto_id'] .'.jpg';
+                                //$imagenPath = 'assets/uploads/'. $item->imagen .'.jpg';
+                                $nombreImagen = isset($item['imagen']) ? $item['imagen'] : ''; 
+                                $imagenPath = 'assets/uploads/' . $nombreImagen; // ...
+                                $imagenFinal = (isset($item['imagen']) && $item['imagen'] !== '' && file_exists(FCPATH . $imagenPath)) ? $imagenPath : $imagenDefault;
                                 $imagenDefault = 'assets/img/productos/default.jpg';
                                 $imagenFinal = file_exists(FCPATH.$imagenPath) ? $imagenPath : $imagenDefault;
                                 ?>
