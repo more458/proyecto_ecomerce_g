@@ -39,22 +39,22 @@
                     <?php endif; ?>
                 </div>
                 <div>
-                    <label class="mt-2" for="age">Categoria</label>
+                <label class="mt-2" for="age">Categoria</label>
                     <select class="form-control" name="categoria_id" id="categoria" value="">
                         <option value="">Seleccionar Categoria</option>
                         <?php foreach ($categorias as $categoria) { ?>
-                            <option value="<?php echo $categoria['id']; ?>">
-                                <?php echo $categoria['id'], ". ", $categoria['descripcion']; } ?>
+                            <option value="<?php echo $categoria->id; ?>"> // Corregido: $categoria->id
+                                <?php echo $categoria->id, ". ", $categoria->descripcion; // Corregido
+                            } ?>
                             </option>
                         </div>
-                        <!--SEGUNDA PARTE-->
                         <?php if($validation->getError('categoria')) {?>
                             <div class='alert alert-danger mt-2'>
                                 <?php $error = $validation->getError('categoria'); ?>
                                 <?= $error ?>
                             </div>
                         <?php } ?>
-                        </select>
+                    </select>
                 
                 <div class="mb-2">
                     <label for="precio" class="form-label">Precio de Costo</label>
