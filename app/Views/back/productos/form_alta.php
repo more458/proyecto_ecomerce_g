@@ -44,7 +44,7 @@
                         <option value="">Seleccionar Categoria</option>
                         <?php foreach ($categorias as $categoria) { ?>
                             <option value="<?php echo $categoria->id; ?>"> // Corregido: $categoria->id
-                                <?php echo $categoria->id, ". ", $categoria->descripcion; // Corregido
+                                <?php echo $categoria->id, ". ", $categoria->descripcion; // Corregido-
                             } ?>
                             </option>
                         </div>

@@ -1,0 +1,71 @@
+DEBUG - 2025-06-20 00:56:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 00:56:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 00:56:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-06-20 00:57:01 --> Error connecting to the database: mysqli_sql_exception: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\1\xampp\htdocs\proyecto_ecomerce\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\1\xampp\htdocs\proyecto_ecomerce\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'tomas_m', 3306, '', 0)
+#1 C:\1\xampp\htdocs\proyecto_ecomerce\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\1\xampp\htdocs\proyecto_ecomerce\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\1\xampp\htdocs\proyecto_ecomerce\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\1\xampp\htdocs\proyecto_ecomerce\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\1\xampp\htdocs\proyecto_ecomerce\system\BaseModel.php(713): CodeIgniter\Model->doFirst()
+#6 C:\1\xampp\htdocs\proyecto_ecomerce\app\Controllers\login_controller.php(24): CodeIgniter\BaseModel->first()
+#7 C:\1\xampp\htdocs\proyecto_ecomerce\system\CodeIgniter.php(933): App\Controllers\Login_controller->auth()
+#8 C:\1\xampp\htdocs\proyecto_ecomerce\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login_controller))
+#9 C:\1\xampp\htdocs\proyecto_ecomerce\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\1\xampp\htdocs\proyecto_ecomerce\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\1\xampp\htdocs\proyecto_ecomerce\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\1\xampp\htdocs\proyecto_ecomerce\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\1\xampp\htdocs\proyecto_ecomerce\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\1\xampp\htdocs\proyecto_ecomerce\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\1\xampp\htdocs\proyecto_ecomerce\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\1\xampp\htdocs\proyecto_ecomerce\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\1\xampp\htdocs\proyecto_ecomerce\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\1\xampp\htdocs\proyecto_ecomerce\system\BaseModel.php(713): CodeIgniter\Model->doFirst()
+#5 C:\1\xampp\htdocs\proyecto_ecomerce\app\Controllers\login_controller.php(24): CodeIgniter\BaseModel->first()
+#6 C:\1\xampp\htdocs\proyecto_ecomerce\system\CodeIgniter.php(933): App\Controllers\Login_controller->auth()
+#7 C:\1\xampp\htdocs\proyecto_ecomerce\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login_controller))
+#8 C:\1\xampp\htdocs\proyecto_ecomerce\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\1\xampp\htdocs\proyecto_ecomerce\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\1\xampp\htdocs\proyecto_ecomerce\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\1\xampp\htdocs\proyecto_ecomerce\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-06-20 00:57:01 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+[Method: POST, Route: enviarlogin]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuarios`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Controllers\login_controller.php(24): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Login_controller->auth()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-20 00:57:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 00:57:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 00:57:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 00:57:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-20 00:57:22 --> Error: Cannot use object of type stdClass as array
+[Method: GET, Route: form_alta]
+in APPPATH\Views\back\productos\form_alta.php on line 46.
+ 1 SYSTEMPATH\View\View.php(224): include()
+ 2 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('back/productos/form_alta', [], true)
+ 4 APPPATH\Controllers\Productocontroller.php(41): view('back/productos/form_alta', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Productocontroller->creaproducto()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productocontroller))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-20 01:05:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
